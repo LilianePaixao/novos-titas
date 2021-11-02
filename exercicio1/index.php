@@ -1,6 +1,8 @@
 <html>
-</html>
-
+<head></head>
+<body>
+<div>
+<form>
 <?php
 /**
  *  Exercise 1
@@ -13,10 +15,12 @@ $sum = $value1 + $value2;
 if($sum > 20){
     //sum = $sum +8;
     $sum += 8;
- 
-} else
+ } else
     $sum -= 5;
-
 echo 'O resultado da soma é ' . $sum."\n";
 
-
+?>
+</form>
+</div>
+</body
+</html>
