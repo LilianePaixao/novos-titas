@@ -1,8 +1,4 @@
 <html>
-<head></head>
-<body>
-<div>
-<form>
 <?php
 /**
  *  Exercise 1

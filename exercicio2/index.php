@@ -16,8 +16,9 @@ if($_POST["number"] % 10 == 0) {
     echo "O número informado " . $_POST["number"]. "é divisível por 5";
 }elseif ($_POST["number"] % 2 == 0) {
     echo "O número informado " . $_POST["number"]. "é divisível por 2";
-} 
+} else {
     echo "O número informado" . ($_POST["number"]) . "não é divisível por 10, por 5, nem por 2";
+}
 
 ?>
 </div>
