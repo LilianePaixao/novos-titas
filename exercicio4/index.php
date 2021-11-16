@@ -13,7 +13,7 @@
             <label for="n2">Digite outro número: </label>
             <input type ="number" size= "10" maxlength ="10" name ="n2">
             <label for="n3"> Digite um terceiro número:</label> 
-            <input type ="number" size= "10" maxlength ="10" name ="n3"></p>
+            <input type ="number" size= "10" maxlength ="10" name ="n3">
         </form>
         
         <?php
