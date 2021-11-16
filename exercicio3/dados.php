@@ -12,7 +12,7 @@ imprimir nome e a mensagem: NÃO ACEITA.*/
             echo "$nome ACEITA";
             }else{
         echo "$nome NÃO ACEITA";
-} 
+            } 
     ?>
         <a href = "exercicio3.html">voltar</a>
 </html>
