@@ -8,9 +8,12 @@
 <body>
     <div>
         <form action = "index.php" method="POST">
-            <p> Digite um número: <input type ="number" size= "35" maxlength ="100" name = "n1"  ></p>
-            <p> Digite um número: <input type ="number" size= "35" maxlength ="100" name = "n2"  ></p>
-            <p> Digite um número: <input type ="number" size= "35" maxlength ="100" name = "n3"  ></p>
+            <label for="n1"> Digite um número:</label>
+            <input type ="number" size= "10" maxlength ="10" name ="n1">
+            <label for="n2">Digite outro número: </label>
+            <input type ="number" size= "10" maxlength ="10" name ="n2">
+            <label for="n3"> Digite um terceiro número:</label> 
+            <input type ="number" size= "10" maxlength ="10" name ="n3"></p>
         </form>
         
         <?php
