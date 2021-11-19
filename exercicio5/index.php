@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercicio5</title>
 </head>
 <body>
     <div>
@@ -25,7 +25,7 @@
         } else {
             echo "Trata-se de um triângulo isósceles porque possui ao menos dois lados iguais". $_POST["n2"].$_POST["n1"].$_POST["n3"];
         }
-    ?>
+        ?>
     </div>
 </body>
 </html>
