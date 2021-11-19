@@ -8,7 +8,7 @@ imprimir nome e a mensagem: NÃO ACEITA.*/
         $nome = $_POST["nome"];
         $sexo = $_POST["sexo"];
         $idade = $_POST["idade"];
-            if ($_POST["fem"] && $_POST["idade"] < 25){ 
+            if ($_POST["sexo"]==="fem" && $_POST["idade"] < 25){ 
             echo "$nome ACEITA";
             }else{
         echo "$nome NÃO ACEITA";
