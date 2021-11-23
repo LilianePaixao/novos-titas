@@ -3,32 +3,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio5</title>
+    <title>Exercicio6</title>
 </head>
 <body>
     <div>
         <form action = "index.php" method="POST">
-            <label for="n1"> Digite um lado de um triângulo:</label>
-            <input type ="number" size= "10" maxlength ="10" name ="n1">
-            <label for="n2">Digite outro lado de um triângulo: </label>
-            <input type ="number" size= "10" maxlength ="10" name ="n2">
-            <label for="n3"> Digite um terceiro lado de um triângulo:</label> 
-            <input type ="number" size= "10" maxlength ="10" name ="n3">
+            <label for="n"> Digite um número inteiro entre 1 e 12:</label>
+            <input type ="number" size= "10" maxlength ="10" name ="n">
         </form>
-        
         <?php
-        /*Ler um número inteiro entre 1 e 12 e escrever
-        o mês correspondente. Caso o número seja
-        fora desse intervalo, informar que não existe
-        mês com este número */
-        
-        if($_POST["n1"] <> $_POST["n2"] && $_POST["n1"] <> $_POST["n3"]) {
-            echo "Trata-se de um triângulo escaleno, porque possui todos os lados diferentes: ". $_POST["n3"] . $_POST["n2"] . $_POST["n1"];
-        }elseif ($_POST["n1"] == $_POST["n3"] && $_POST["n1"] == $_POST["n2"]){
-            echo "Trata-se de um triângulo equilátero, porque possui todos os lados iguais: ". $_POST["n1"] . $_POST["n2"] .$_POST["n3"];
-        } else {
-            echo "Trata-se de um triângulo isósceles porque possui ao menos dois lados iguais". $_POST["n2"].$_POST["n1"].$_POST["n3"];
-        }
+        /* Ler um número inteiro entre 1 e 12 e escrever
+o mês correspondente. Caso o número seja
+fora desse intervalo, informar que não existe
+mês com este número */
+
+         $meses=["0","janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+         $mesInformado=$meses[$_POST["n"]];
+
+            if($_POST["n"] >= 1 && $_POST["n"] <= 12) {
+                echo "O mês correspondente ao número digitado é ". $meses[n];
+            } else {
+                echo "Não existe um mês relacionado ao número";
+            }
         ?>
     </div>
 </body>
