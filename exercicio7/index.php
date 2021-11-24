@@ -12,7 +12,7 @@
         <form action = "index.php" method="POST">
             
             <label for="nomedolivro"> Digite o nome do livro que será emprestado:</label>
-            <input type ="text" size= "100" maxlength ="100" name ="n" id="nomedolivro">
+            <input type ="text" size= "100" maxlength ="100" name ="nomedolivro" id="nomedolivro">
 
                 <fieldset><legend>Tipo de usuário</legend>
                 
