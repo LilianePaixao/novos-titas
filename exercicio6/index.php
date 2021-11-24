@@ -9,7 +9,7 @@
     <div>
         <form action = "index.php" method="POST">
             <label for="n"> Digite um número inteiro entre 1 e 12:</label>
-            <input type ="number" size= "10" maxlength ="10" name ="n">
+            <input type ="number" size= "10" maxlength ="10" name ="n" id="n">
         </form>
         <?php
         /* Ler um número inteiro entre 1 e 12 e escrever
@@ -22,8 +22,8 @@ mês com este número */
 
             if($_POST["n"] >= 1 && $_POST["n"] <= 12) {
                 echo "O mês correspondente ao número digitado é ". $meses[n];
-            } else {
-                echo "Não existe um mês relacionado ao número";
+            } elseif ($_POST["n"] < 1 && $_POST["n"] > 12){
+                echo "Não existe um mês relacionado ao número informado";
             }
         ?>
     </div>
