@@ -35,7 +35,7 @@
             if($_POST["tipousuario"] == "prof" ) {
                 echo "Professor você possui 10 dias para devolver o livro".$_POST["nomedolivro"] ;
             } elseif ($_POST["tipousuario"] == "alu" ){
-                echo "Aluno você possui 3 dias para devolver o livro".$_POST["nomedolivro"];
+                echo "Aluno você possui 3 dias para devolver o livro ".$_POST["nomedolivro"];
             }
         ?>
     </div>
