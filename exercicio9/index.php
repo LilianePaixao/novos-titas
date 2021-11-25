@@ -19,7 +19,7 @@
         /* Entrar com o número de vezes que se deseja
 imprimir a palavra SOL e imprimir */
             for ($i=1;$i <= $_POST["numero"];$i++){
-                echo $i."SOL".PHP_EOL;
+                echo "SOL".PHP_EOL;
             } 
            
                
