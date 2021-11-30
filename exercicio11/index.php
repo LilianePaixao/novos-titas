@@ -21,8 +21,7 @@
         $numero = $_POST["numero"];
               for ($i=0;$i <= 10;$i++){
                 echo $i ." x " .$_POST["numero"]. "=". $i*$_POST["numero"]. PHP_EOL;
-            } 
-                   
+            }                   
         ?>
     </div>
 </body>
