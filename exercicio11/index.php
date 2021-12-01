@@ -13,14 +13,14 @@
             
             <label for="numero"> Informe um número</label>
             <input type ="number" name ="numero" id="numero">
-            <input type ="submit" value = "Enviar">         
+            <input type ="submit" value = "Enviar">          
 
 
         </form>
         <?php
         $numero = $_POST["numero"];
               for ($i=0;$i <= 10;$i++){
-                echo $i ." x " .$_POST["numero"]. "=". $i*$_POST["numero"]. PHP_EOL;
+                echo $i ." x " .$_POST["numero"]. "=". $i*$_POST["numero"]. "<br/>";
             }                   
         ?>
     </div>
