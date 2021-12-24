@@ -1,7 +1,6 @@
 <html>
 <?php
-/**
- *  Exercise 1
+/** Exercise 1
  */
 $value1 = $argv[1];
 $value2 = $argv[2];
