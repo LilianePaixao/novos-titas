@@ -10,18 +10,19 @@
         <div>
             <h1> Exercício 1 </h1>
 
-            <form method="post" action="index.php">
+            <form method="POST" action="index.php">
                 
                     <label for="n1">Digite o 1º número: </label>
-                    <input type="number" id="n1">
+                    <input type="number" name="n1">
                           
                     <label for="n2">Digite o 2º número: </label>
-                    <input type="number" id="n2" >
+                    <input type="number" name="n2" >
                   
                     <input type="submit" value="Enviar"/>
                 
                     <img id= "img" src="iconezap.png">
             </form>
+
                 <?php
                 /* Construir um algoritmo que leia 2 números e
                 efetue a adição. Caso o valor somado seja
@@ -30,14 +31,14 @@
                 somado seja menor ou igual a 20, este deverá
                 ser apresentado subtraindo-se 5
                 */
-                
-                $sum = $POST["n1"] + $POST["n2"];
-                echo " A soma dos dois números é $sum";
+                               
+                $sum = $_POST["n1"] + $_POST["n2"];
 
-                 if($sum > 20){
-                    echo "$sum  += 8";
+                if($sum > 20){
+                    echo $sum += 8;
+
                 } elseif($um <=20){
-                    echo "$sum -= 5";
+                    echo $sum -= 5;
                 }    
                 ?>
     
