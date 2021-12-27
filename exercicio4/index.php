@@ -25,7 +25,7 @@
         } else {
             echo "Os números informados em ordem decrescentes é ". $_POST["n2"].$_POST["n1"].$_POST["n3"];
         }
-    ?>
-    </div>
-</body>
+            ?>
+        </div>
+    </body>
 </html>
