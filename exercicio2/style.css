@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+fieldset{
+    background-color: rgb(185, 233, 233);
+    width:900px;
+    margin: 0 auto;
+
+}
+form{
+    background-color: aquamarine;
+    margin:40px 40px 40px 40px;
+    }
+form label{
+    display: block;
+    font-size: 30px;
+    margin: 0 0 10px 10px;
+    padding: 10px;
+    
+}
+.input-padrao{
+    display: block;
+    margin:0 0 20px;
+    padding: 10px 25px;
+    width: 50%; 
+}
+form input{
+
+}
+#img{
+    width: 2%;
+    }
