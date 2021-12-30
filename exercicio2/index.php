@@ -1,16 +1,22 @@
-<html>
+<!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="style.css" 
+    <html lang="pt-br">
+    <meta charset= "utf-8">
+    <link rel="stylesheet" href="/exercicio2/style.css">
+
 </head>
 <body>
     <h1> Exercício 2 </h1>
 <fieldset>
-    <form action = "index.php" method="POST">
+    <form action = "/exercicio2/index.php" method="POST">
         <label for="numerodigitado" > Digite um número:</label>
         
-        <input type ="number"  name = "number" id="numerodigitado"class= "input-padrao" required placeholder= "O número pode ser inteiro, real...">
+        <input type="number"  name="number" id="numerodigitado" class="input-padrao" required placeholder= "O número pode ser inteiro, real..." maxlengyh:100px>
     
-        <input type="submit" value="Enviar">
+        <a href="/exercicio2/index.php">
+            <input type="submit" value="Enviar">
+        </a>   
+
     </form>
 </fieldset>    
 <?php
