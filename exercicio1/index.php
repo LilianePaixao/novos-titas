@@ -1,16 +1,19 @@
-<html>
+<!DOCTYPE html>
     <head> 
-            <link rel="stylesheet" href="style.css"    
-            <meta charset="UTF-8"/>
-            <title>Exercício 1 </title>
-        </head>
+            
+        <html lang="pt-br">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/exercicio1/style.css">    
+        
+        <title>Exercício 1 </title>
+    </head>
 
     <body>
        
         <div>
             <h1> Exercício 1 </h1>
 
-            <form method="POST" action="index.php">
+            <form method="POST" action="/exercicio1/index.php">
                 
                     <label for="n1">Digite o 1º número: </label>
                     <input type="number" name="n1">
