@@ -27,12 +27,14 @@ divisível por nenhum destes*/
 
 if (empty($_POST["number"])){
     echo "";
-}elseif ($_POST["number"] % 2 == 0){
-    echo "O número informado: " . $_POST["number"]. " é divisível por 2";
-}elseif ($_POST["number"] % 5 == 0) {
-    echo "O número informado: " . $_POST["number"]. " é divisível por 5";
-}elseif ($_POST["number"] % 10 == 0) {
-    echo "O número informado:  " . $_POST["number"]." é divisível por 10";
+}elseif ($_POST["number"] % 2 == 0 and $_POST["number"] % 5 == 0 and $_POST["number"] % 10 == 0){
+    echo "O número informado: " . $_POST["number"]. " é divisível por 2, por 5 e 10";
+}elseif ($_POST["number"] % 5 == 0 and $_POST["number"] % 10 == 0) {
+    echo "O número informado: " . $_POST["number"]. " é divisível por 5 e 10";
+}elseif ($_POST["number"] % 2 == 0) {
+    echo "O número informado:  " . $_POST["number"]." é divisível por 2";
+} elseif($_POST["number"] % 5 == 0){
+    echo "O número informado:  " . $_POST["number"]." é divisível por 5";
 } else {
     echo "O número informado: " . ($_POST["number"]) . " não é divisível por 10, por 5, nem por 2";
 }
