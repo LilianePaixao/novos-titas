@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<head>
     <html lang="pt-br">
+<head>
+    
     <meta charset= "utf-8">
     <link rel="stylesheet" href="/exercicio2/style.css">
 
