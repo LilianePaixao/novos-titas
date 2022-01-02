@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-    <head> 
-        <html lang="pt-br">   
-        <html lang="pt-br">
+    <html lang="pt-br">   
+<head> 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/exercicio1/style.css">    
         <title>Exercício 1 </title>
