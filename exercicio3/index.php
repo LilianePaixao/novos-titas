@@ -5,8 +5,9 @@
         <link rel="stylesheet" href="/exercicio3/style.css">    
     </head>
     <body>
-        <h1>Entrar com nome, sexo e idade de uma
-pessoa. Se a pessoa for do sexo feminino e tiver menos que 25 anos, imprimir nome e a mensagem: ACEITA. Caso contrário, imprimir nome e a mensagem: NÃO ACEITA.</h1>
+        <h1>Exercício 3 </h1>
+        <h3>Entrar com nome, sexo e idade de uma
+pessoa. Se a pessoa for do sexo feminino e tiver menos que 25 anos, imprimir nome e a mensagem: ACEITA. Caso contrário, imprimir nome e a mensagem: NÃO ACEITA.</h3>
         
         <div class ="alert"> 
             <form method="post" action="/exercicio3/index.php">
@@ -29,9 +30,9 @@ pessoa. Se a pessoa for do sexo feminino e tiver menos que 25 anos, imprimir nom
 /* Entrar com nome, sexo e idade de uma
 pessoa. Se a pessoa for do sexo feminino e tiver menos que 25 anos, imprimir nome e a mensagem: ACEITA. Caso contrário, imprimir nome e a mensagem: NÃO ACEITA.*/
                 
-                if($_POST["name"] == null and $_POST["sexo"]== null and $_POST["idade"]== null){
+                if($_POST["name"] == null && $_POST["sexo"]== null && $_POST["idade"]== null){
                     echo ""; 
-                }elseif($_POST["sexo"] === "mulher" and $_POST["idade"] < 25 ){
+                }elseif($_POST["sexo"] === "mulher" && $_POST["idade"] < 25 ){
                     echo $_POST["name"] . "ACEITA";
                 }else{ 
                     echo $_POST["name"] . "NÃO ACEITA";
