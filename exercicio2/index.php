@@ -1,10 +1,8 @@
 <!DOCTYPE html>
     <html lang="pt-br">
 <head>
-    
     <meta charset= "utf-8">
     <link rel="stylesheet" href="/exercicio2/style.css">
-
 </head>
 <body>
     <h1> Exercício 2 </h1>
