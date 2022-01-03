@@ -21,9 +21,9 @@ divisível por nenhum destes*/
 
 if (empty($_POST["numerodigitado"])){
     echo "";
-}elseif ($_POST["numerodigitado"] % 2 == 0 and $_POST["numerodigitado"] % 5 == 0 and $_POST["numerodigitado"] % 10 == 0){
+}elseif ($_POST["numerodigitado"] % 2 == 0 && $_POST["numerodigitado"] % 5 == 0 && $_POST["numerodigitado"] % 10 == 0){
     echo "O número informado: " . $_POST["numerodigitado"]. " é divisível por 2, por 5 e 10";
-}elseif ($_POST["numerodigitado"] % 5 == 0 and $_POST["numerodigitado"] % 10 == 0) {
+}elseif ($_POST["numerodigitado"] % 5 == 0 && $_POST["numerodigitado"] % 10 == 0) {
     echo "O número informado: " . $_POST["numerodigitado"]. " é divisível por 5 e 10";
 }elseif ($_POST["numerodigitado"] % 2 == 0) {
     echo "O número informado:  " . $_POST["numerodigitado"]." é divisível por 2";
