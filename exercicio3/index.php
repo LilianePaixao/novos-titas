@@ -21,15 +21,12 @@ pessoa. Se a pessoa for do sexo feminino e tiver menos que 25 anos, imprimir nom
                 </fieldset>
                 <br/>   
                 <label for="idade">Idade:</label>
-                <input type="number" id="idade" name="idade" value="idade"/><br/>
+                <input type="number" id="idade" name="idade"/><br/>
                 <br/>
                 <input type="submit" value="Enviar"/>
             </form>                        
         </div>
-            <?php
-/* Entrar com nome, sexo e idade de uma
-pessoa. Se a pessoa for do sexo feminino e tiver menos que 25 anos, imprimir nome e a mensagem: ACEITA. Caso contrário, imprimir nome e a mensagem: NÃO ACEITA.*/
-                
+            <?php            
                 if($_POST["name"] == null && $_POST["sexo"]== null && $_POST["idade"]== null){
                     echo ""; 
                 }elseif($_POST["sexo"] === "mulher" && $_POST["idade"] < 25 ){
