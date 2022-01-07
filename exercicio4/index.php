@@ -13,13 +13,14 @@ diferentes)</p>
 
         <form action = "/exercicio4/index.php" method="POST">
             <label for="n1"> Digite um número:</label>
-            <input type ="number" size= "10" maxlength ="10" name ="n1">
+            <input type ="number" size= "10" id="n1" name ="n1" required>
             <label for="n2">Digite outro número: </label>
-            <input type ="number" size= "10" maxlength ="10" name ="n2">
+            <input type ="number" size= "10" id="n2" name ="n2" required>
             <label for="n3"> Digite um terceiro número:</label> 
-            <input type ="number" size= "10" maxlength ="10" name ="n3">
-            <input type="submit" value="Enviar">
+            <input type ="number" size= "10" id="n3" name ="n3" required>
+            <input type="submit" value="Enviar" class="enviar">
         </form>
+
     </fieldset>   
         <?php
         /* Entrar com 3 números e imprimi-los em ordem decrescente (suponha números diferentes */
