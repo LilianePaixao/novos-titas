@@ -1,0 +1,29 @@
+h1, p{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+div{
+    background-color: rgb(199, 168, 248);
+
+}
+form{
+    background-color: rgb(127, 129, 255);
+    margin:40px 10px 20px 10px;
+}
+form label{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px 10px;
+    padding: 5px;
+}
+form input{
+    display: block;
+    margin:0 0 20px;
+    padding: 10px 25px;
+}
+legend input{
+    display: inline-block;
+}
+#img{
+    width: 2%;
+}
