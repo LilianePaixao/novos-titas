@@ -29,7 +29,7 @@ input{
     margin:0 0 20px;
     padding: 10px 25px;
 }
-.enviar{
+.Enviar{
     width:10%;
     padding: 15px 0;
     background-color:crimson;
@@ -41,7 +41,7 @@ input{
     transition: 2s all;
     cursor: pointer;
 }
-.enviar:hover{
+.Enviar:hover{
     background: darkmagenta;
     transform: scale(0.8);
 }
