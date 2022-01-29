@@ -1,0 +1,43 @@
+h1, p{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form{
+    background-color: rgb(127, 129, 255);
+    margin:40px 20px 20px 10px;
+}
+fieldset{
+    background-color: rgb(199, 168, 248);
+    width:940px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+form label{
+    display: inline;
+    font-size: 20px;
+    margin: 0 0 10px 10px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input{
+    display: inline;
+    margin:0 0 20px;
+    padding: 10px 25px;
+}
+.enviar{
+    width:10%;
+    padding: 15px 0;
+    background-color:crimson;
+    font-weight: bold;
+    color:white;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    transition: 2s all;
+    cursor: pointer;
+}
+.enviar:hover{
+    background: darkmagenta;
+    transform: scale(0.8);
+}
