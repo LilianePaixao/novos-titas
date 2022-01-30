@@ -31,13 +31,13 @@ dos positivos e o total de números negativos</h2>
        
             $numerosInformados = $_POST["numero"];
 
-                $array_numeros = explode (",", $numerosInformados);
+            $array_numeros = explode (",", $numerosInformados);
             
-                foreach($array_numeros as $numero){    
+            foreach($array_numeros as $numero){    
                     ($numero < 0) ? $neg[] = $numero : $pos[] = $numero;
-                }
-                    echo "A soma dos números positivos é ". array_sum($pos). "<br/>";
-                    echo "A quantidade de números negativos é " . count($neg). "</br>" ;             
+            }
+            echo "A soma dos números positivos é ". array_sum($pos). "<br/>";
+            echo "A quantidade de números negativos é " . count($neg). "</br>" ;             
         }
         ?>
     </div>
