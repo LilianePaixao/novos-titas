@@ -20,7 +20,7 @@
         </form>
         <?php
             $numero = $_POST["numero"];
-                if (isset($_POST[numero])){
+                if (isset($_POST["numero"])){
                     for ($i=0;$i <= 10;$i++){
                         $resultado = $i * $numero;
                         echo " $numero  x  $i =  $resultado <br/>";
