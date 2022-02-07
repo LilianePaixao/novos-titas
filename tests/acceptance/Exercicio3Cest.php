@@ -1,6 +1,6 @@
 <?php
 
-class Exercicios3Cest
+class Exercicio3Cest
 {
     // Entre na página
     public function CheckIndex(AcceptanceTester $I)
