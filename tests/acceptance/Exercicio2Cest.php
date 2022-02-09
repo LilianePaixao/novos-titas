@@ -2,14 +2,8 @@
 
 class Exercicios2Cest
 {
-    // tests
-    public function CheckIndex(AcceptanceTester $I)
-    {
-        $I->amOnPage('/');
-        $I->see('Índice');
-    }
-
-    public function exercici1Works(AcceptanceTester $I)
+    
+    public function exercicio2Works(AcceptanceTester $I)
     {
         $I->amOnPage('/exercicio2');
         $I->see('Exercício 2');
