@@ -1,6 +1,6 @@
 # Find more information on how to run codes' **Novos Titãs**
 
-## Where do you stay
+## Where are you
 ```
 /novos-titas
 
