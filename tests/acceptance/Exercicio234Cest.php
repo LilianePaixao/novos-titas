@@ -1,34 +1,34 @@
 <?php
 
-class Exercicios2Cest
+class Exercicios234Cest
 {
     
-    public function exercicio2Works(AcceptanceTester $I)
+    public function divisible2510(AcceptanceTester $I)
     {
         $I->amOnPage('/exercicio2');
         $I->see('Exercício 2');
-        //Divided 2
+        //Divisible 2
         $I->fillField('numerodigitado', '2');
         $I->click("Enviar");
         $I->see('2 é divisível por 2');
-        //Divided 5
+        //Divisible 5
         $I->fillField('numerodigitado', '5');
         $I->click("Enviar");
         $I->see('5 é divisível por 5');
-        //Divided 10
+        //Divisible 10
         $I->fillField('numerodigitado', '10');
         $I->click("Enviar");
         $I->see('10 é divisível por 2, por 5 e 10');
-        //Divided 5
+        //Divisible 5
         $I->fillField('numerodigitado', '45');
         $I->click("Enviar");
         $I->see('45 é divisível por 5');
-        //Not divided
+        //Not dividible
         $I->fillField('numerodigitado', '39');
         $I->click("Enviar");
         $I->see('39 não é divisível por 10, por 5, nem por 2');
     }
-    public function exercicio3Works(AcceptanceTester $I)
+    public function femaleBelow25(AcceptanceTester $I)
     {        
         $I->amOnPage('/exercicio3');
         $I->see('Exercício 3');
@@ -42,8 +42,6 @@ class Exercicios2Cest
         $I->see('Não aceita');
     
         //Female 24
-        $I->amOnPage('/exercicio3');
-        $I->see('Exercício 3');
         //Name
         $I->fillField('name', 'Liliane');
         //female checkbox 
@@ -54,8 +52,6 @@ class Exercicios2Cest
         $I->see('aceita');
 
         //Male 24
-        $I->amOnPage('/exercicio3');
-        $I->see('Exercício 3');
         //Name
         $I->fillField('name', 'João');
         //female checkbox 
@@ -66,8 +62,6 @@ class Exercicios2Cest
         $I->see('Não aceita');
 
         //Male 25
-        $I->amOnPage('/exercicio3');
-        $I->see('Exercício 3');
         //name
         $I->fillField('name', 'João');
         //female checkbox 
@@ -78,8 +72,6 @@ class Exercicios2Cest
         $I->see('Não aceita');
 
         //Male 26
-        $I->amOnPage('/exercicio3');
-        $I->see('Exercício 3');
         //Name
         $I->fillField('name', 'João');
         //female checkbox 
@@ -89,7 +81,7 @@ class Exercicios2Cest
         $I->click("Enviar");
         $I->see('Não aceita');
     }
-    public function exercicio4Works(AcceptanceTester $I)
+    public function ThreeNumbersDescendingOrder(AcceptanceTester $I)
     {
         $I->amOnPage('/exercicio4');
         $I->see('Exercício 4');
