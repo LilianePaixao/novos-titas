@@ -19,8 +19,11 @@
         <?php
             $param1 = $_POST["numero"]; // dentro do post tem que ficar o name do input
             
-            if(!empty($param1)){
+            //if(!empty($param1)){
+            if($_POST["numero"] >= 1 ){    
                 readNumber($param1);
+            } elseif ($_POST["numero"] < 0 || $_POST["numero"] == 0 ){
+                echo "Informe um número inteiro e positivo";
             }
 
         function readNumber($param1){    
