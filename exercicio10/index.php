@@ -34,13 +34,20 @@ dos positivos e o total de números negativos</h2>
             $array_numeros = explode (",", $numerosInformados);
             
             foreach($array_numeros as $numero){    
-                    ($numero < 0) ? $neg[] = $numero : $pos[] = $numero;
+                //    ($numero < 0) ? $neg[] = $numero : $pos[] = $numero;
+                if($numero < 0){
+                    $neg[] = $numero;
+                } elseif($numero > 0){
+                    $pos[] = $numero;
+                } elseif ($numero == 0){
+                    $zero[] = $numero;
+                }
             }
             echo "A soma dos números positivos é ". array_sum($pos). "<br/>";
-            echo "A quantidade de números negativos é " . count($neg). "</br>" ;             
+            echo "A quantidade de números negativos é " . count($neg). "</br>";
+            echo "A quantidade de zeros informados  é " . count($zero). "</br>"; 
         }
         ?>
     </div>
 </body>
 </html>
-

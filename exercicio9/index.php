@@ -22,8 +22,14 @@
 
         <?php
         
+
         $param = $_POST["numero"];
-        sol($param);
+
+        if($_POST["numero"] >= 1 ){    
+            sol($param);
+        } elseif ($_POST["numero"] <= 0 ){
+            echo "Informe um número inteiro e positivo";
+        }
 
         function sol($param){
             for ($i=1;$i <= $param;$i++)
