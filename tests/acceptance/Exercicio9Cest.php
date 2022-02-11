@@ -9,16 +9,16 @@ class Exercicios9Cest
         $I->see('Exercício 9');
         //Number 2
         $I->fillField('numero', '2');
-        $I->click("Enviar");
+        $I->click("enviar");
         $I->see('SOL
         SOL');
        //Number zero 
        $I->fillField('numero', '0');
-       $I->click("Enviar");
+       $I->click("enviar");
        $I->see('Informe um número inteiro e positivo');
        //Negatives numbers
        $I->fillField('numero', '-1');
-       $I->click("Enviar");
+       $I->click("enviar");
        $I->see('Informe um número inteiro e positivo');
     }
 }
