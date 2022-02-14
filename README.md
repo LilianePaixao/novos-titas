@@ -1,6 +1,23 @@
 # Find more information on how to run codes' **Novos Titãs**
 
-## Where are you
+### To prepare environment
+
+**How to install the codeception**
+* at repo with composer.json because this
+
+** Type on your terminal**
+'''
+composer install
+'''
+
+'''
+php vendor/bin/codecept run --steps
+'''
+
+> More information
+[Framework utilizado para testes](https://codeception.com/)
+
+### Where are you
 ```
 /novos-titas
 

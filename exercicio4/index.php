@@ -30,8 +30,8 @@ diferentes)</p>
             echo "Os números informados em ordem decrescente são " . $_POST["n3"]."," .$_POST["n2"]." e ".$_POST["n1"];
         }elseif ($_POST["n3"] < $_POST["n2"] && $_POST["n3"]<$_POST["n1"]&& $_POST["n2"]<$_POST["n1"]){
             echo "Os números informados em ordem decrescente são ". $_POST["n1"]."," .$_POST["n2"]." e ".$_POST["n3"];
-        } else {
-            echo "Os números informados em ordem decrescentes são ". $_POST["n2"]."," .$_POST["n1"]." e ".$_POST["n3"];
+        } elseif ($_POST["n1"] > $_POST["n2"] && $_POST["n1"] < $_POST["n3"] && $_POST["n2"] < $_POST["n3"]){
+            echo "Os números informados em ordem decrescentes são ". $_POST["n3"]."," .$_POST["n1"]." e ".$_POST["n2"];
         }
             ?>
        
