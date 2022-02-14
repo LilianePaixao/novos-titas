@@ -85,35 +85,48 @@ class Exercicios234Cest
     {
         $I->amOnPage('/exercicio4');
         $I->see('Exercício 4');
-        //numbers 3,4,5
+        
+        //numbers 3,4,5 ok
         $I->fillField('n1', '3');
         $I->fillField('n2', '4');
         $I->fillField('n3', '5');
         $I->click("Enviar");
         $I->see('Os números informados em ordem decrescente são 5,4 e 3');
         
-        ///numbers 5, 4 e 3
-        $I->fillField('n1', '5');
-        $I->fillField('n2', '4');
-        $I->fillField('n3', '3');
+        //numbers 3,5,4 ok
+        $I->fillField('n1', '3');
+        $I->fillField('n2', '5');
+        $I->fillField('n3', '4');
         $I->click("Enviar");
         $I->see('Os números informados em ordem decrescente são 5,4 e 3');
         
-        ///numbers 4, 5 e 3
+        ///numbers 4, 5 e 3 ok
         $I->fillField('n1', '4');
         $I->fillField('n2', '5');
         $I->fillField('n3', '3');
         $I->click("Enviar");
         $I->see('Os números informados em ordem decrescente são 5,4 e 3');
         
-        ///números 4, 3 e 5 - esse tinha dado errado
-        //Preenche com 4
+        ///numbers 4, 3 e 5 ok
         $I->fillField('n1', '4');
-        //Preenche com 3
         $I->fillField('n2', '3');
-        //Preenche com 5
         $I->fillField('n3', '5');
         $I->click("Enviar");
         $I->see('Os números informados em ordem decrescente são 5,4 e 3');
+
+        ///numbers 5, 4 e 3 ok
+        $I->fillField('n1', '5');
+        $I->fillField('n2', '4');
+        $I->fillField('n3', '3');
+        $I->click("Enviar");
+        $I->see('Os números informados em ordem decrescente são 5,4 e 3');
+        
+        ///numbers 5, 3 e 4
+        $I->fillField('n1', '5');
+        $I->fillField('n2', '3');
+        $I->fillField('n3', '4');
+        $I->click("Enviar");
+        $I->see('Os números informados em ordem decrescente são 5,4 e 3');
+        
     }
 }

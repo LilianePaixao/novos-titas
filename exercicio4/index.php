@@ -24,15 +24,23 @@ diferentes)</p>
     </fieldset>   
         <?php
         /* Entrar com 3 números e imprimi-los em ordem decrescente (suponha números diferentes */
-        if($_POST["n1"] == null && $_POST["n2"] == null && $_POST["n3"] == null){
-            echo "";
+       
+        
+        if(empty($_POST["n1"] && $_POST["n2"] && $_POST["n3"])){
+            echo"Preencha os campos acima";    
         }elseif($_POST["n1"] < $_POST["n2"] && $_POST["n1"] < $_POST["n3"] && $_POST["n2"] < $_POST["n3"]) {
-            echo "Os números informados em ordem decrescente são " . $_POST["n3"]."," .$_POST["n2"]." e ".$_POST["n1"];
-        }elseif ($_POST["n3"] < $_POST["n2"] && $_POST["n3"]<$_POST["n1"]&& $_POST["n2"]<$_POST["n1"]){
-            echo "Os números informados em ordem decrescente são ". $_POST["n1"]."," .$_POST["n2"]." e ".$_POST["n3"];
-        } elseif ($_POST["n1"] > $_POST["n2"] && $_POST["n1"] < $_POST["n3"] && $_POST["n2"] < $_POST["n3"]){
-            echo "Os números informados em ordem decrescentes são ". $_POST["n3"]."," .$_POST["n1"]." e ".$_POST["n2"];
-        }
+         echo "Os números informados em ordem decrescente são " . $_POST["n3"] ."," . $_POST["n2"]." e ".$_POST["n1"];
+        }elseif($_POST["n1"] < $_POST["n2"] && $_POST["n1"] < $_POST["n3"] && $_POST["n2"] > $_POST["n3"]) {
+        echo "Os números informados em ordem decrescente são " . $_POST["n2"] ."," . $_POST["n3"]." e ".$_POST["n1"];
+        }elseif($_POST["n1"] < $_POST["n2"] && $_POST["n1"] > $_POST["n3"] && $_POST["n2"] > $_POST["n3"]) {
+        echo "Os números informados em ordem decrescente são " . $_POST["n2"] ."," . $_POST["n1"]." e ".$_POST["n3"];
+        }elseif($_POST["n1"] > $_POST["n2"] && $_POST["n1"] < $_POST["n3"] && $_POST["n2"] < $_POST["n3"]) {
+        echo "Os números informados em ordem decrescente são " . $_POST["n3"] ."," . $_POST["n1"]." e ".$_POST["n2"];
+        }elseif($_POST["n1"] > $_POST["n2"] && $_POST["n1"] > $_POST["n3"] && $_POST["n2"] > $_POST["n3"]) {
+        echo "Os números informados em ordem decrescente são " . $_POST["n1"] ."," . $_POST["n2"]." e ".$_POST["n3"];   
+        }elseif($_POST["n1"] > $_POST["n2"] && $_POST["n1"] > $_POST["n3"] && $_POST["n2"] < $_POST["n3"]) {
+        echo "Os números informados em ordem decrescente são " . $_POST["n1"] ."," . $_POST["n3"]." e ".$_POST["n2"]; 
+        }    
             ?>
        
     </body>
