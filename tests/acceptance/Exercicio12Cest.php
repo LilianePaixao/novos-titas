@@ -9,12 +9,12 @@ class Exercicios12Cest
         $I->see('Exercício 12');
         //Number 2
         $I->fillField('numero', '2');
-        $I->click("Enviar");
+        $I->click("enviar");
         $I->see('SONHO
         SONHO SONHO');
         //Number 0
         $I->fillField('numero', '0');
-        $I->click("Enviar");
+        $I->click("enviar");
         $I->see(''); 
         
     }

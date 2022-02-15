@@ -9,7 +9,7 @@ class Exercicios11Cest
         $I->see('Exercício 11');
         //Tabuada 2
         $I->fillField('numero', '2');
-        $I->click("Enviar");
+        $I->click("enviar");
         $I->see('2 x 0 = 0
         2 x 1 = 2
         2 x 2 = 4
@@ -23,7 +23,7 @@ class Exercicios11Cest
         2 x 10 = 20');
         //Tabuada 0
         $I->fillField('numero', '0');
-        $I->click("Enviar");
+        $I->click("enviar");
         $I->see('0 x 0 = 0
         0 x 1 = 0
         0 x 2 = 0
