@@ -15,38 +15,33 @@ números entre 100 e 200 foram digitados. Se
 o valor 0 for lido encerrar a execução</h2>  
 
         <form action = "/exercicio13/index.php" method="POST">
-            
-            <label for="number"> Informe ao menos cinco números entre 0 e 200:</label>
-            <input type ="text" name ="number">
-            
+            <label for="numero"> Informe ao menos cinco números entre 0 e 200:</label>
+            <input type ="text" name ="numero"placeholder="exemplo:1-100-2-150-20">
             <p>Os números informados devem ser separados por - (traço) <br/></p>     
-            
             <input type="submit" value="enviar" class="enviar">
-
         </form>
         <?php
         $array_numbers = '';
         $length = '';
         $qtd = 0;
        
-       if (!empty($_POST["number"])){
+        if (isset ($_POST["numero"])){
        
-            $numbersInputs = $_POST["number"];
+            $numerosInformados = $_POST["numero"];
 
-            $array_numbers = explode ("-", $numbersInputs);
+            $array_numeros = explode ("-", $numerosInformados);
             
-            foreach($array_numbers as $number){    
-                
-                if($number >= 100 && $numbers <= 200){
-                    $cemdu[] = $number;
-                    
-                }elseif ($number === 0){
-                    $zero[] = $numero;
-                }
-                Echo "A quantidade de números digitados entre 100 e 200 é ". count($cemdu). "</br>"; 
-                
-        }
-    }
+            foreach($array_numeros as $numero){    
+                if($numero <= 200 && $numero >=100){
+                    $cemdu[] = $numero;
+                }elseif ($numero == 0){
+                    echo "Execução do programa parada </br>" ;
+                } 
+            }
+            echo "A quantidade de números entre 100 e 200 é " . count($cemdu). "</br>" ;
+                                
+                     
+        }       
         ?>
     </div>
 </body>
