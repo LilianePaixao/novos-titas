@@ -1,5 +1,8 @@
 # Find more information on how to run codes' **Novos Titãs**
 
+# novos-titas
+É necessário abrir o terminal e entrar na pasta clonada, e digita php -S localhost:8585, daí abrirá o índice principal então selecione o exercício que deve ser testado.
+
 ### To prepare environment
 
 **How to install the codeception**
