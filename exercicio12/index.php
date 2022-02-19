@@ -22,7 +22,7 @@ SONHO SONHO SONHO SONHO<br/></p>
             
             <label for="numero"> Digite um número:</label>
             <input type ="number" name ="numero" id="numero">
-            <button type ="submit" class="enviar">Enviar</button>
+            <button type ="submit" class="enviar">enviar</button>
 
         </form>
         <?php
