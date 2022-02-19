@@ -11,8 +11,6 @@ class Exercicios10Cest
         $I->fillField('numero','1,2,3,4,5,6,7,8,9,0,-1,-2,-3,-4,-5,-6,-7,-8,-9');
         $I->click("enviar");
         $I->see('A soma dos números positivos é 45 
-        A quantidade de números negativos é 9
-        A quantidade de zeros informados é 1
         ');
     }
     
