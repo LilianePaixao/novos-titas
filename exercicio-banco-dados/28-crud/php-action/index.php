@@ -1,12 +1,12 @@
 <?php
 //header
-include_once 'includes/header.php';
+include_once '../includes/header.php';
 ?>
 
 <div class="row">
-    <div class="col s12 m6 push-m3 red">
+    <div class="col s12 m6 push-m3">
         <h3 class="ligth">Clientes</h3>
-        <table class="stripped">
+        <table class="striped">
             <thead>
                 <tr>
                     <th>Nome:</th>
@@ -22,8 +22,8 @@ include_once 'includes/header.php';
                     <td>Oliveira</td>
                     <td>liliane@gmail.com</td>
                     <td>20</td>
-                    <td><a href="" class="btn-floating orange"></a><i class="material-icons">edit</i></td>
-                    <td><a href="" class="btn-floating red"></a><i class="material-icons">delete</i></td>
+                    <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+                    <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
                 </tr>
             </tbody>
         </table>
@@ -42,7 +42,7 @@ include_once 'includes/header.php';
 
 <?php
 //footer
-include_once 'includes/footer.php';
+include_once '../includes/footer.php';
 ?>
 
     

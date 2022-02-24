@@ -19,5 +19,7 @@ services:
   phpmyadmin:
     image: phpmyadmin:5.1.1-apache
     ports:
-      - 8182:80
+      - 8282:80
+    environment:
+      - PMA_ARBITRARY=1
 
