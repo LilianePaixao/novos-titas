@@ -49,3 +49,9 @@ Entry on the clonage directory (~projetos/novos-titas/exercicio-banco-dados/28-c
 Type on terminal: no caminho ~projetos/novos-titas/exercicio-banco-dados/28-crud
 docker-compose up
 
+3. Open phpmyadmin
+Type in your browse
+```
+localhost:8282
+```
+
