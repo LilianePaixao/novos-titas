@@ -24,17 +24,20 @@ include_once 'includes/message.php';
                 <?php
                 $sql = "SELECT * FROM clientes";
                 $resultado = mysqli_query($connect, $sql);
-                while ($dados = mysqli_fetch_array($resultado));
+                
+                while ($dados = mysqli_fetch_array($resultado)){;
                 ?>
-                <tr>
-                    <td><?php echo $dados['nome'];?> </td>
-                    <td><?php echo $dados['sobrenome'];?> </td>
-                    <td><?php echo $dados['email'];?></td>
-                    <td><?php echo $dados['idade'];?></td>
+                    <tr>
+                    <td><?= $dados['name'];?> </td>
+                    <td><?= $dados['lastname'];?> </td>
+                    <td><?= $dados['email'];?></td>
+                    <td><?= $dados['age'];?></td>
                     <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
                     <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
                 </tr>
-                <?phpendwhile; ?>
+                <?php
+                }; 
+                ?>
             </tbody>
         </table>
         <br>
