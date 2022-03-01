@@ -41,17 +41,30 @@ php -S localhost:8585
 php vendor/bin/codecept run --steps
 
 ```
-**How to run the Mysql**
-1. The way
-Entry on the clonage directory (~projetos/novos-titas/exercicio-banco-dados/28-crud), and type php -S localhost:8080
+**How to run with databases**
+1. Usage with docker-compose and arbitrary server
+For phpmyadmin, set 
+phpmyadmin:
+    image: phpmyadmin
+    ports:
+        - 8080:80 (if this port available)
+    environment:
+        -PMA_ARBITRARY=1
+[dockerhub](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
 
-2. Open docker
-Type on terminal: no caminho ~projetos/novos-titas/exercicio-banco-dados/28-crud
-docker-compose up
+- type on terminal: ~projetos/novos-titas/exercicio-banco-dados/28-crud
+docker-compose updocker-compose up
+- Fill in the field server: dbMysql
+- Fill in the Field username: titas
+
+2. Database
+- click in Export (on top in page)
+- choice fast Export Method
+- choice the format SQL and execute
 
 3. Open phpmyadmin
-Type in your browse
+Type in your browser
 ```
-localhost:8282
+localhost:8080
 ```
 
