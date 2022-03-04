@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <?php
 //Conexão
 include_once 'php-action/db_connect.php';
@@ -49,3 +51,4 @@ include_once 'includes/message.php';
 //footer
 include_once 'includes/footer.php';
 ?>
+</html>

@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <?php
 //header
 include_once 'includes/header.php';
@@ -27,3 +29,4 @@ include_once 'includes/header.php';
         </form>
     </div>
 </div>
+</html>
