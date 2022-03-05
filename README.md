@@ -1,6 +1,15 @@
 # Find more information on how to run codes' **Novos Titãs**
 
-# novos-titas
+# To run software codes on terminal
+É necessário abrir o terminal e entrar na pasta clonada, e digita php -S localhost:8000, daí abrirá o índice principal então selecione o exercício que deve ser avaliado.
+
+```
+php -S localhost:8000
+
+```
+
+
+# Testes
 É necessário abrir o terminal e entrar na pasta clonada, e digita php -S localhost:8585, daí abrirá o índice principal então selecione o exercício que deve ser testado.
 
 ### To prepare environment
@@ -13,32 +22,10 @@
 composer install
 '''
 
+at the directory novos-titas
 '''
 php vendor/bin/codecept run --steps
 '''
 
 > More information
 [Framework utilizado para testes](https://codeception.com/)
-
-### Where are you
-```
-/novos-titas
-
-```
-
-1. To run software codes on terminal
-```
-php -S localhost:8000
-
-```
-
-2. To run tests codes on terminal
-```
-php -S localhost:8585
-
-```
-```
-php vendor/bin/codecept run --steps
-
-```
-
