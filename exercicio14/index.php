@@ -40,6 +40,25 @@ include_once 'includes/message.php';
                 <?php
                 }
                 ?>
+        <?php
+            //algoritmo    
+            if (isset($_POST['numero']) && $_POST['numero1'] ){
+            
+                $ano = 0;
+                $juca = $_POST["numero"];
+                $chico = $_POST["numero1"];
+
+                while($chico >= $juca){
+                //incrementa à idade de Chico;
+                $chico += 2;
+                //incrementa à idade de Juca
+                $juca += 3;
+                //conta mais um ano
+                $ano++;
+                }
+            echo "Serão necessários $ano, para que Juca seja maior que Chico"; 
+        } else
+        ?>
             </tbody>
         </table>
         <br>
