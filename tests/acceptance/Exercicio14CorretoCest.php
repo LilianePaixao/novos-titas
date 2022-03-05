@@ -3,10 +3,10 @@
 class Exercicios14CorretoCest
 {
     
-    public function Chico(AcceptanceTester $I)
+    public function StudentsRegisterTest(AcceptanceTester $I)
     {
-        $I->amOnPage('/exercicio14a');
-        $I->see('Exercício 14');
+        $I->amOnPage('/exercicio14');
+        $I->see('Estudantes');
         //Numbers 110 and 150
         $I->fillField('numero', '110');
         $I->fillField('numero1', '150');
