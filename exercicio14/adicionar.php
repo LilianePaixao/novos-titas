@@ -17,12 +17,12 @@ include_once 'includes/header.php';
                 <label for="lastname">Sobrenome</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="higth" id="higth">
-                <label for="higth">Altura(cm)</label>
+                <input type="text" name="growth"  id="growth">
+                <label for="growth">Crescimento por ano(cm)</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="growth" id="growth">
-                <label for="growth">Crescimento por ano(cm)</label>
+                <input type="text" name="higth"id="higth">
+                <label for="higth"> Altura(cm)</label>
             </div>
             <button type="submit" name="btn-cadastrar" class="btn">Cadastrar</button>
             <a href="index.php" type="submit" class="btn green">Lista de estudantes</a>
