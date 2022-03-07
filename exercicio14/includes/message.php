@@ -1,8 +1,8 @@
 <?php
 //Sessão
 session_start();
-if(isset($_SESSION['mensagem'])):
-?>
+if(isset($_SESSION['mensagem'])){ ?>
+
 
 <script>
     //mensagem
@@ -12,5 +12,8 @@ if(isset($_SESSION['mensagem'])):
 </script>
     
 <?php
-endif;
+}
 session_unset();
+
+?>
+
