@@ -8,14 +8,14 @@
 **How to install the codeception**
 * at repo with composer.json because this
 
-** Type on your terminal**
-'''
+**Type on your terminal**
+```
 composer install
-'''
+```
 
-'''
+```
 php vendor/bin/codecept run --steps
-'''
+```
 
 > More information
 [Framework utilizado para testes](https://codeception.com/)
@@ -52,8 +52,9 @@ phpmyadmin:
         -PMA_ARBITRARY=1
 [dockerhub](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
 
-- type on terminal: ~projetos/novos-titas/exercicio-banco-dados/28-crud
-docker-compose updocker-compose up
+- type on terminal to open the cards NVT-107 and NVT-110
+~projetos/novos-titas/exercicio-banco-dados/28-crud
+docker-compose up
 - Fill in the field server: dbMysql
 - Fill in the Field username: titas
 
@@ -65,6 +66,5 @@ docker-compose updocker-compose up
 3. Open phpmyadmin
 Type in your browser
 ```
-localhost:8080
+localhost:8282
 ```
-
