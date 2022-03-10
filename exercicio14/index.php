@@ -1,6 +1,6 @@
 <?php
 //Conexão
-//include_once 'php-action/db_connect.php';
+include_once 'php-action/db_connect.php';
 //Header
 include_once 'includes/header.php';
 //Message

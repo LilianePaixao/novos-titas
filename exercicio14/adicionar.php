@@ -10,12 +10,10 @@ include_once 'includes/header.php';
                 <input type="text" name="name" id="name">
                 <label for="name">Nome</label>
             </div>
-
             <div class="input-field col s12">
                 <input type="text" name="lastname" id="lastname">
                 <label for="lastname">Sobrenome</label>
             </div>
-
             <div class="input-field col s12">
                 <input type="text" name="higth" id="higth">
                 <label for="higth">Altura(cm)</label>
