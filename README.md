@@ -44,5 +44,5 @@ php vendor/bin/codecept run --steps
 **How to run with databases**
 
 - type on terminal to open the cards NVT-107 and NVT-110
-~projetos/novos-titas/exercicio-banco-dados/28-crud
 docker-compose up
+To import clientes.sql

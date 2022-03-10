@@ -41,7 +41,7 @@ include_once 'includes/message.php';
             </tbody>
         </table>
         <br>
-        <a href="adicionar.php" class="btn"> Adicionar cliente</a>
+        <a href="28-crud/adicionar.php" class="btn"> Adicionar cliente</a>
     </div>
 </div>
 
