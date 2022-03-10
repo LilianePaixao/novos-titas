@@ -41,6 +41,11 @@ php -S localhost:8585
 php vendor/bin/codecept run --steps
 
 ```
+- if necessary clean the cache of tests
+```
+php vendor/bin/codecept clean
+```
+
 **How to run with databases**
 1. Usage with docker-compose and arbitrary server
 For phpmyadmin, set 
