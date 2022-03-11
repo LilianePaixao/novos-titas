@@ -1,7 +1,11 @@
 # Find more information on how to run codes' **Novos Titãs**
 
-# novos-titas
 É necessário abrir o terminal e entrar na pasta clonada, e digitar php -S localhost:8585, daí abrirá o índice principal então selecione o exercício que deve ser testado.
+
+### Databases
+- Cards NVT-107 and NVT-110
+docker-compose up
+Import clientes.sql (where: novos-titas/exercicio-banco-dados/clientes.sql)
 
 ### To prepare environment
 
@@ -43,6 +47,3 @@ php vendor/bin/codecept run --steps
 ```
 **How to run with databases**
 
-- type on terminal to open the cards NVT-107 and NVT-110
-docker-compose up
-To import clientes.sql
