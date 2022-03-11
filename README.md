@@ -4,8 +4,8 @@
 
 ### Databases
 - Cards NVT-107 and NVT-110
-docker-compose up
-Import clientes.sql (where: novos-titas/exercicio-banco-dados/clientes.sql)
+docker-compose up -d
+Import database clientes.sql (where: novos-titas/exercicio-banco-dados/clientes.sql)
 
 ### To prepare environment
 
@@ -41,9 +41,5 @@ php -S localhost:8000
 php -S localhost:8585
 
 ```
-```
-php vendor/bin/codecept run --steps
 
-```
-**How to run with databases**
 
