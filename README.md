@@ -2,13 +2,15 @@
 
 É necessário abrir o terminal e entrar na pasta clonada, e digitar php -S localhost:8585, daí abrirá o índice principal então selecione o exercício que deve ser testado.
 
-### Databases
+### To run Databases
 - Cards NVT-107 and NVT-110
-docker-compose up -d
 Import database clientes.sql (where: novos-titas/exercicio-banco-dados/clientes.sql)
 
-### To prepare environment
+- To run project
+/exercicio-banco-dados
+docker-compose up -d
 
+### To prepare environment for tests
 **How to install the codeception**
 * at repo with composer.json because this
 
