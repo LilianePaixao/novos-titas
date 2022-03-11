@@ -1,3 +1,7 @@
+<?php
+//Conexão
+include_once '/db_connect.php';      
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
