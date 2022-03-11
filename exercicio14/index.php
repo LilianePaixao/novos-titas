@@ -34,10 +34,10 @@
             if (isset($_POST["higth1" ]) && $_POST["higth2"] ){
             
                 $ano = 0;
-                $estudanteMaior = $_POST["higth1" ];
+                $estudanteMaior = $_POST["higth1"];
                 $estudanteMenor = $_POST["higth2"];
-                $cresceMaior = $_POST["growth1" ];
-                $cresceMenor = $_POST["growth2" ];
+                $cresceMaior = $_POST["growth1"];
+                $cresceMenor = $_POST["growth2"];
 
                 while($estudanteMaior >= $estudanteMenor){
                 //incrementa à idade de Chico;
@@ -51,6 +51,14 @@
             } else {
                 echo "Infome os dados que se pedem.";
             }
+            //conexão com banco de dados
+            $estudanteMaior = mysqli_escape_string($connect, $_POST['higth1']);
+            $estudanteMenor = mysqli_escape_string($connect, $_POST['higth2']);
+            $cresceMaior = mysqli_escape_string($connect, $_POST['growth1']);
+            $cresceMenor = mysqli_escape_string($connect, $_POST['growth2']);
+            
+            //insere dados no banco de dados
+            $sql = "INSERT INTO Estudantes (higth1,higth2, growth1, growth2) VALUES ('$estudanteMaior', '$estudanteMenor','$cresceMaior', '$cresceMenor')";
        ?>
     </div>
 </body>
