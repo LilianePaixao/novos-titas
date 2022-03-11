@@ -1,16 +1,8 @@
-<?php
-//Conexão
-//include_once 'php-action/db_connect.php';
-//Header
-include_once 'includes/header.php';
-//Message
-include_once 'includes/message.php';
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <!-- <link rel="stylesheet" href="/exercicio12/style.css"> -->
+    <link rel="stylesheet" href="/base/style.css"> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,65 +10,48 @@ include_once 'includes/message.php';
 </head>
 
 <body>
-    <div class = "row">
-        <div class ="col s12 m6 push-m3">
-            <h3 class = "light">Estudantes</h3>
-        <!-- <h1> Exercício 14</h1>
-        <p> Chico tem 1,50m e cresce 2 centímetros por
-ano, enquanto Juca tem 1,10m e cresce 3 centímetros por ano. <br/>
-Construir um algoritmos que calcule e imprima quantos anos serão
-necessários para que Juca seja maior que Chico</p> -->
-            <table class ="striped">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>Altura(cm)</th>
-                        <th>Cresce por ano (cm)<th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Chico</td>
-                        <td>Silva</td>
-                        <td>150</td>
-                        <td>2</td>
-                        <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>   
-                        <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Juca</td>
-                        <td>Almeida</td>
-                        <td>110</td>
-                        <td>3</td>     
-                        <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>   
-                        <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
+    <div>
+        <h1> Exercício 14</h1>
+        <p> Construir um algoritmos que calcule e imprima quantos anos serão necessários para que o menor estudante seja seja maior que o outro estudante.</p>
+        <form action = "exercicio14/index.php" method="POST">
+            
+            <label for="higth1" > Digite a altura do primeiro estudante(cm):</label>
+            <input type ="number" name ="higth1" id="higth1" size="48" placeholder= "A altura deve ser maior que a altura do próximo estudante">
+            
+            <label for="growth1" > Quanto cresce por ano (cm) esse primeiro estudante:</label>
+            <input type ="number" name ="growth1"id="growth1">
 
-                </tbody>
-            </table>
-            <br>
-            <a href="" class="btn"> Adicionar estudante</a>
-        
+            <label for="higth2"> Digite a altura de outro estudante(cm):</label>
+            <input type ="number" name ="higth2" id="higth2" size="48" placeholder= "A altura deve ser menor que a altura já informada ">
+
+            <label for="growth2" > Quanto cresce o segundo estudante por ano (cm):</label>
+            <input type ="number" name ="growth2" id="growth2">
+
+            <button type ="submit" class="enviar">enviar</button>
+
+        </form>
         <?php
+            if (isset($_POST["higth1" ]) && $_POST["higth2"] ){
             
                 $ano = 0;
-                $alunoUm = 150;
-                $alunoDois = 110;
+                $estudanteMaior = $_POST["higth1" ];
+                $estudanteMenor = $_POST["higth2"];
+                $cresceMaior = $_POST["growth1" ];
+                $cresceMenor = $_POST["growth2" ];
 
-                while($alunoUm >= $alunoDois){
+                while($estudanteMaior >= $estudanteMenor){
                 //incrementa à idade de Chico;
-                $alunoUm += 2;
+                $estudanteMaior += $cresceMaior;
                 //incrementa à idade de Juca
-                $alunoDois += 3;
+                $estudanteMenor += $cresceMenor;
                 //conta mais um ano
                 $ano++;
                 }
-            echo "Serão necessários $ano, para que o segundo aluno seja maior que o maior aluno"; 
+            echo "Serão necessários $ano, para que o segundo estudante seja maior que o primeiro estudante informado."; 
+            } else {
+                echo "Infome os dados que se pedem.";
+            }
        ?>
     </div>
 </body>
 </html>
-<?php
-//footer
-include_once 'includes/footer.php';
-?>
