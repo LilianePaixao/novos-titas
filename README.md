@@ -3,8 +3,15 @@
 É necessário abrir o terminal e entrar na pasta clonada, e digitar php -S localhost:8585, daí abrirá o índice principal então selecione o exercício que deve ser testado.
 
 ### To run Databases
+-Card 113
+Import database Estudantes.sql (where: /exercicio14/Estudantes.sql)
+
+- To run project
+/exercicio14
+docker-compose up -d
+
 - Cards NVT-107 and NVT-110
-Import database clientes.sql (where: novos-titas/exercicio-banco-dados/clientes.sql)
+Import database clientes.sql (where: /exercicio-banco-dados/clientes.sql)
 
 - To run project
 /exercicio-banco-dados
