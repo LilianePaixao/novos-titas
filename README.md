@@ -1,9 +1,40 @@
 # Find more information on how to run codes' **Novos Titãs**
 
-É necessário abrir o terminal e entrar na pasta clonada, e digitar php -S localhost:8585, daí abrirá o índice principal então selecione o exercício que deve ser testado.
+## Requirements
+- PHP
+- PHP Composer
+- [Docker](https://docs.docker.com/engine/install/ubuntu/)
+- Docker Compose
+
+## How do you run the project?
+
+1) Go to folder project.
+2) Run the command in your terminal `composer install`
+3) Run the command `php -S localhost:8585`
+
+Daí abrirá o índice principal então selecione o exercício que deve ser testado.
+
+### Run the database
+#### exercicio-banco-dados
+1) Go to the folder `exercicio-banco-dados`
+2) Run the command: `docker-compose up -d`
+3) Import the database `/exercicio-banco-dados/clientes.sql`
+
+Tips: 
+- [Import database using the phpMyAdmin](https://www.youtube.com/watch?v=jW5lrS6EUPM)
+- Look the `docker-compose.yml` to see others settings.
+
+
+### Run the tests
+1) Got to folder project.
+2) Run the command
+
+```bash
+php vendor/bin/codecept run --steps
+```
 
 ### To run Databases
--Card 113
+- Card 113
 Import database Estudantes.sql (where: /exercicio14/Estudantes.sql)
 
 - To run project
@@ -21,10 +52,7 @@ docker-compose up -d
 **How to install the codeception**
 * at repo with composer.json because this
 
-**Type on your terminal**
-```
-composer install
-```
+
 
 ```
 php vendor/bin/codecept run --steps
