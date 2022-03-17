@@ -27,6 +27,6 @@
     <a href=/exercicio18>Exercício 18</a><br/>
     <a href=/exercicio19>Exercício 19</a><br/>
     <a href=/exercicio20>Exercício 20</a><br/>
-    <a href=/exercicio-banco-dados/28-crud>Aulas 46 47 48 e 49</a><br/>
+    <a href=/28-crud>Aulas 46 47 48 e 49</a><br/>
   </body>
 </html>
