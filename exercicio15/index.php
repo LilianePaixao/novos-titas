@@ -48,13 +48,12 @@ radioativo.</p>
                         $massa = $resultado;
                         //conta mais um 
                         $count++;
-                        //$tempoPerda = $tempoPerda + $tempoPerda;
                     }
                     $totalTime = $tempoPerda*$count;
 
                     echo "Serão necessários " .  $totalTime/60 . " minutos, para que a massa do material seja menor que 0.10 gramas."; 
                 } else {
-                    echo "Infome os dados que se pedem.";
+                    echo "Informe os dados que se pedem.";
                 }
         }  
 
