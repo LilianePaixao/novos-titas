@@ -16,7 +16,8 @@ include_once '/db_connect.php';
 <body>
     <div>
         <h1> Exercício 15</h1>
-        <p> Na usina de Angra dos Reis, os técnicos analisam a perda de massa de um material radioativo. Sabendo-se que este perde 25% de sua massa a cada 30 segundos, criar um algoritmos que imprima o tempo necessário para que a massa desse material seja menor que 0.10</p>
+        <p> Na usina de Angra dos Reis, os técnicos analisam a perda de massa de um material
+radioativo.</p>
         <form action = "exercicio15/index.php" method="POST">
             
             <label for="massa" > Digite a massa do material radioativo (g):</label>
@@ -24,6 +25,9 @@ include_once '/db_connect.php';
 
             <label for="perda" > Porcentagem de perda:</label>
             <input type ="number" name ="perda" id="perda" size="20" placeholder="Use 25 para 25%">
+
+            <label for="tempoPerda" > Qual tempo para que essa perda ocorra(segundo)</label>
+            <input type ="number" name ="tempoPerda" id="tempoPerda" size="20" placeholder="segundos">
             
             <button type ="submit" class="enviar">enviar</button>
 
@@ -31,18 +35,18 @@ include_once '/db_connect.php';
         <?php
             if (isset($_POST["massa"])){
             
-                $tempo = 0;
+                $tempoPerda = $_POST["tempoPerda"];
                 $massa = $_POST["massa"];
                 $perda = $_POST["perda"];
-
-                while($massa >= 0.10){
-                //incrementa à massa;
-                $resultado = $massa -($massa / 100 * $perda);
-                $massa = $resultado;
-                //conta mais um 
-                $tempo++;
-                }
-            echo "Serão necessários " .  $tempo . " minutos, para que a massa do material seja menor que 0.10 gramas."; 
+                
+                    for($massa; $massa>=0.1; $tempoPerda){
+                        //incrementa à massa;
+                        $resultado = $massa -($massa / 100 * $perda);
+                        $massa = $resultado;
+                        //conta mais um 
+                        $tempoPerda++;
+                    }
+            echo "Serão necessários" .  $tempoPerda . " minutos, para que a massa do material seja menor que 0.10 gramas."; 
             } else {
                 echo "Infome os dados que se pedem.";
             }
