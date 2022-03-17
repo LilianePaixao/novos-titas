@@ -1,6 +1,6 @@
 <?php
 //Conexão
-include_once '/db_connect.php';      
+include_once 'db_connect.php';      
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,6 +34,14 @@ radioativo.</p>
         </form>
         <?php
         
+        //Trata os valores informados para evitar sql injection
+        $massa = mysqli_escape_string($connect, $_POST['massa']);
+        $perda = mysqli_escape_string($connect, $_POST['perda']);
+        $tempoPerda= mysqli_escape_string($connect, $_POST['tempoPerda']);
+       
+        $sql = "INSERT INTO Cientistas (massa,perda, tempoPerda) VALUES ('$massa', '$perda','$tempoPerda')";
+        
+            
             function massRadioativ(){
                 if (isset($_POST["massa"])){
                 
@@ -56,7 +64,6 @@ radioativo.</p>
                     echo "Informe os dados que se pedem.";
                 }
         }  
-
         massRadioativ();
        ?>
     </div>
