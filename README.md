@@ -54,6 +54,13 @@ Import database clientes.sql (where: /exercicio-banco-dados/clientes.sql)
 /exercicio-banco-dados
 docker-compose up -d
 
+- Cards NVT-116
+Import database Cientistas.sql (where:/exercicio15/Cientistas.sql)
+
+- To run project
+/exercicio15
+docker-compose up -d
+
 
 
 
