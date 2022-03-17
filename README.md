@@ -32,6 +32,12 @@ Tips:
 ```bash
 php vendor/bin/codecept run --steps
 ```
+3) If necessary clean the cache run the command 
+```bash
+vendor/bin/codecept clean
+```
+> More information
+- https://codeception.com/
 
 ### To run Databases
 - Card 113
@@ -48,35 +54,9 @@ Import database clientes.sql (where: /exercicio-banco-dados/clientes.sql)
 /exercicio-banco-dados
 docker-compose up -d
 
-### To prepare environment for tests
-**How to install the codeception**
-* at repo with composer.json because this
 
 
 
-```
-php vendor/bin/codecept run --steps
-```
 
-> More information
-[Framework utilizado para testes](https://codeception.com/)
-
-### Where are you
-```
-/novos-titas
-
-```
-
-1. To run software codes on terminal
-```
-php -S localhost:8000
-
-```
-
-2. To run tests codes on terminal
-```
-php -S localhost:8585
-
-```
 
 
