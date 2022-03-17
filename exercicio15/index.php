@@ -33,31 +33,32 @@ radioativo.</p>
 
         </form>
         <?php
-            if (isset($_POST["massa"])){
-            
-                $tempoPerda = $_POST["tempoPerda"];
-                $massa = $_POST["massa"];
-                $perda = $_POST["perda"];
+        
+            function massRadioativ(){
+                if (isset($_POST["massa"])){
                 
+                    $tempoPerda = $_POST["tempoPerda"];
+                    $massa = $_POST["massa"];
+                    $perda = $_POST["perda"];
+                    $count = 0;
+
                     for($massa; $massa>=0.1; $tempoPerda){
                         //incrementa à massa;
                         $resultado = $massa -($massa / 100 * $perda);
                         $massa = $resultado;
                         //conta mais um 
-                        $tempoPerda++;
+                        $count++;
+                        //$tempoPerda = $tempoPerda + $tempoPerda;
                     }
-            echo "Serão necessários" .  $tempoPerda . " minutos, para que a massa do material seja menor que 0.10 gramas."; 
-            } else {
-                echo "Infome os dados que se pedem.";
-            }
-            //conexão com banco de dados
-            //$estudanteMaior = mysqli_escape_string($connect, $_POST['higth1']);
-            //$estudanteMenor = mysqli_escape_string($connect, $_POST['higth2']);
-            //$cresceMaior = mysqli_escape_string($connect, $_POST['growth1']);
-            //$cresceMenor = mysqli_escape_string($connect, $_POST['growth2']);
-            
-            //insere dados no banco de dados
-            //$sql = "INSERT INTO Estudantes (higth1,higth2, growth1, growth2) VALUES ('$estudanteMaior', '$estudanteMenor','$cresceMaior', '$cresceMenor')";
+                    $totalTime = $tempoPerda*$count;
+
+                    echo "Serão necessários" .  $totalTime/60 . " minutos, para que a massa do material seja menor que 0.10 gramas."; 
+                } else {
+                    echo "Infome os dados que se pedem.";
+                }
+        }  
+
+        massRadioativ();
        ?>
     </div>
 </body>
