@@ -6,7 +6,7 @@ services:
     command:  --default-authentication-plugin=mysql_native_password
     environment: 
       MYSQL_ROOT_PASSWORD: L1l1@n3
-      MYSQL_DATABASE: titas
+      MYSQL_DATABASE: Exercicio15
       MYSQL_USER: acf
       MYSQL_PASSWORD: password
     ports:
