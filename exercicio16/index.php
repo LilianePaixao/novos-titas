@@ -9,9 +9,7 @@
 </head>
 <body>
     <h1>Exercício 16</h1>
-    <p>Armazenar 15 números inteiros em um vetor
-e imprimir uma mensagem contendo o
-número e uma das mensagens: par ou ímpar</p>
+    <p> Na primeira coluna armazene 15 números inteiros, na segunda coluna mostre quais desses números são pares e na terceira coluna quais são ímpares.</p>
     <div>
         <form action = "/exercicio16/index.php" method="POST">
             
@@ -24,24 +22,25 @@ número e uma das mensagens: par ou ímpar</p>
         </form>
         
         <?php
-        if (isset ($_POST["numerosDigitados"])){
+
+                if (isset ($_POST["numerosDigitados"])){
             
-            $numerosInformados = $_POST["numerosDigitados"];
+             $numerosInformados = $_POST["numerosDigitados"];
 
-            $array_numeros = explode (",", $numerosInformados);
-
-            foreach($array_numeros as $numero){    
-                if ($numero % 2 == 0) {
-                    $numerosPares[] = $numerosPares;
-
-                } else {
-                    $numerosImpares[] = $numerosImpares;
-                } 
-            }
-        } else {
-            echo "Você ainda não informou nenhum número.</br>";
+             $array_numeros = explode (",", $numerosInformados);
+            
+             foreach($array_numeros as $numero){    
+               $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
+              }
+        
+            // mostra valores
+            echo "Os números pares são".'<pre>';
+                var_dump($par);
+            
+            echo "Os números ímpares são".'<pre>';
+                var_dump($impar);
         }
-        echo " Os números pares são " . $numerosPares;
+            
         ?>
     </div>
 </body>
