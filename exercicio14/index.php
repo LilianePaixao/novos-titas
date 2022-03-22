@@ -1,6 +1,6 @@
 <?php
 //Conexão
-include_once '/db_connect.php';      
+include_once 'db_connect.php';      
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,21 +20,23 @@ include_once '/db_connect.php';
         <form action = "exercicio14/index.php" method="POST">
             
             <label for="higth1" > Digite a altura do primeiro estudante(cm):</label>
-            <input type ="number" name ="higth1" id="higth1" size="48" placeholder= "A altura deve ser maior que a altura do próximo estudante">
+            <input type ="text" name ="higth1" id="higth1" size="100" placeholder= "A altura deve ser maior que a altura do próximo estudante">
             
             <label for="growth1" > Quanto cresce por ano (cm) esse primeiro estudante:</label>
-            <input type ="number" name ="growth1"id="growth1">
+            <input type ="text" name ="growth1"id="growth1">
 
             <label for="higth2"> Digite a altura de outro estudante(cm):</label>
-            <input type ="number" name ="higth2" id="higth2" size="48" placeholder= "A altura deve ser menor que a altura já informada ">
+            <input type ="text" name ="higth2" id="higth2" size="100" placeholder= "A altura deve ser menor que a altura já informada ">
 
             <label for="growth2" > Quanto cresce o segundo estudante por ano (cm):</label>
-            <input type ="number" name ="growth2" id="growth2">
+            <input type ="text" name ="growth2" id="growth2">
 
             <button type ="submit" class="enviar">enviar</button>
 
         </form>
         <?php
+
+
             if (isset($_POST["higth1" ]) && $_POST["higth2"] ){
             
                 $ano = 0;
@@ -51,7 +53,7 @@ include_once '/db_connect.php';
                 //conta mais um ano
                 $ano++;
                 }
-            echo "Serão necessários $ano, para que o segundo estudante seja maior que o primeiro estudante informado."; 
+            echo "Serão necessários $ano anos, para que o segundo estudante seja maior que o primeiro estudante informado."; 
             } else {
                 echo "Infome os dados que se pedem.";
             }
@@ -62,7 +64,23 @@ include_once '/db_connect.php';
             $cresceMenor = mysqli_escape_string($connect, $_POST['growth2']);
             
             //insere dados no banco de dados
-            $sql = "INSERT INTO Estudantes (higth1,growth1, higth2, growth2) VALUES ('$estudanteMaior', '$cresceMaior','$estudanteMenor', '$cresceMenor')";
+            $sql = "INSERT INTO Estudantes (higth1, growth1, higth2, growth2) VALUES ('$estudanteMaior', '$cresceMaior','$estudanteMenor', '$cresceMenor')";
+
+            try {
+                if ($mysqli = mysqli_query($connect, $sql)) {
+                   // header('Location:index.php?sucesso');
+                  exit;
+                } else {
+                 //   header('Location:index.php?erro');
+                 printf("Can't connect to localhost. Error: %s\n", mysqli_connect_error());
+                 var_dump($connect);
+              }
+      
+      
+      
+              } catch (Exception $e) {
+                  echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+              } 
        ?>
     </div>
 </body>
