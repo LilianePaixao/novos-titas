@@ -57,12 +57,12 @@ include_once '/db_connect.php';
             }
             //conexão com banco de dados
             $estudanteMaior = mysqli_escape_string($connect, $_POST['higth1']);
-            $estudanteMenor = mysqli_escape_string($connect, $_POST['higth2']);
             $cresceMaior = mysqli_escape_string($connect, $_POST['growth1']);
+            $estudanteMenor = mysqli_escape_string($connect, $_POST['higth2']);
             $cresceMenor = mysqli_escape_string($connect, $_POST['growth2']);
             
             //insere dados no banco de dados
-            $sql = "INSERT INTO Estudantes (higth1,higth2, growth1, growth2) VALUES ('$estudanteMaior', '$estudanteMenor','$cresceMaior', '$cresceMenor')";
+            $sql = "INSERT INTO Estudantes (higth1,growth1, higth2, growth2) VALUES ('$estudanteMaior', '$cresceMaior','$estudanteMenor', '$cresceMenor')";
        ?>
     </div>
 </body>
