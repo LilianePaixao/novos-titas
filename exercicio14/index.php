@@ -76,8 +76,6 @@ include_once 'db_connect.php';
                  var_dump($connect);
               }
       
-      
-      
               } catch (Exception $e) {
                   echo 'Exceção capturada: ',  $e->getMessage(), "\n";
               } 
