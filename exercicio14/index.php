@@ -17,7 +17,7 @@ include_once 'db_connect.php';
     <div>
         <h1> Exercício 14</h1>
         <p> Construir um algoritmos que calcule e imprima quantos anos serão necessários para que o menor estudante seja seja maior que o outro estudante.</p>
-        <form action = "exercicio14/index.php" method="POST">
+        <form action = "/exercicio14/index.php" method="POST">
             
             <label for="higth1" > Digite a altura do primeiro estudante(cm):</label>
             <input type ="text" name ="higth1" id="higth1" size="100" placeholder= "A altura deve ser maior que a altura do próximo estudante">
