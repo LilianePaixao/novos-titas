@@ -1,7 +1,34 @@
 <?php
 //Conexão
-include_once 'db_connect.php';      
+include_once 'db_connect.php';    
+include_once 'test_execute_connection.php';
+
+function massRadio(){
+    if (isset($_POST["massa"])){
+    
+        $tempoPerda = $_POST["tempo_perda"];
+        $massa = $_POST["massa"];
+        $perda = $_POST["perda"];
+        $count = 0;
+
+        for($massa; $massa>=0.1; $tempoPerda){
+            //incrementa à massa;
+            $resultado = $massa -($massa / 100 * $perda);
+            $massa = $resultado;
+            //conta mais um 
+            $count++;
+        }
+        $totalTime = $tempoPerda*$count;
+
+        echo "Serão necessários " .  $totalTime/60 . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
+    } else {
+        echo "Informe os dados que se pedem";
+    }
+    
+}  
+
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,13 +52,13 @@ include_once 'db_connect.php';
         <form action = "/exercicio15/index.php" method="POST">
             
             <label for="massa" > Digite a massa do material radioativo (g):</label>
-            <input type ="number" name ="massa" id="massa" size="20" placeholder="Exemplo 0.2">
+            <input type ="text" name ="massa" id="massa" size="20" placeholder="Exemplo 0.2">
 
             <label for="perda" > Porcentagem de perda:</label>
-            <input type ="number" name ="perda" id="perda" size="20" placeholder="Use 25 para 25%">
+            <input type ="text" name ="perda" id="perda" size="20" placeholder="Use 25 para 25%">
 
             <label for="tempo_perda" > Qual tempo para que essa perda ocorra(segundo)</label>
-            <input type ="number" name ="tempo_perda"id="tempo_perda" size="20" placeholder="segundos">
+            <input type ="text" name ="tempo_perda"id="tempo_perda" size="20" placeholder="segundos">
             
             <button type ="submit" class="enviar">enviar</button>
 
@@ -45,45 +72,10 @@ include_once 'db_connect.php';
        
         $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda) VALUES ('$massa', '$perda','$tempoPerda')";
 
-        try {
-          if ($mysqli = mysqli_query($connect, $sql)) {
-             // header('Location:index.php?sucesso');
-            exit;
-          } else {
-           //   header('Location:index.php?erro');
-           printf("Can't connect to localhost. Error: %s\n", mysqli_connect_error());
-           var_dump($connect);
-        }
-          
-          
-
-        } catch (Exception $e) {
-            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-        } 
-
-            function massRadio(){
-                if (isset($_POST["massa"])){
-                
-                    $tempoPerda = $_POST["tempoPerda"];
-                    $massa = $_POST["massa"];
-                    $perda = $_POST["perda"];
-                    $count = 0;
-
-                    for($massa; $massa>=0.1; $tempoPerda){
-                        //incrementa à massa;
-                        $resultado = $massa -($massa / 100 * $perda);
-                        $massa = $resultado;
-                        //conta mais um 
-                        $count++;
-                    }
-                    $totalTime = $tempoPerda*$count;
-
-                    echo "Serão necessários " .  $totalTime/60 . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
-                } else {
-                    echo "Informe os dados que se pedem.";
-                }
-        }  
+        
+        test_execute_connection($connect, $sql);
         massRadio();
+        
        ?>
     </div>
 </body>
