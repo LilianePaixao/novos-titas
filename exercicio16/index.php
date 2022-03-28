@@ -29,18 +29,19 @@
 
                     $array_numeros = explode (",", $numerosInformados);
             
-                        foreach($array_numeros as $numero){    
+                    foreach($array_numeros as $numero){    
                         $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
-                        }
-                            // mostra valores
-                            echo "Os números pares são".'<pre>';
-                            var_dump($par);
-            
-                            echo "Os números ímpares são".'<pre>';
-                            var_dump($impar);
-                } else
-                echo "Os números informados devem ser positivos";
-                }            
+                    }
+                    // mostra valores
+                    echo "Os números pares são".'<pre>';
+                    var_dump($par);
+    
+                    echo "Os números ímpares são".'<pre>';
+                    var_dump($impar);
+                } 
+                else
+                    echo "Os números informados devem ser positivos";
+            }            
         ?>
     </div>
 </body>
