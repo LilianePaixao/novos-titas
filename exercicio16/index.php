@@ -16,31 +16,31 @@
             <label for="numero"> Informe 15 números separados com ",":</label>
             <input type ="text" size= "100" maxlength ="50" name = "numerosDigitados" placeholder = "1,2,110,200,300,0...">
 
-            
             <input type="submit" value="enviar" class="enviar">
             
         </form>
         
         <?php
 
-                if (isset ($_POST["numerosDigitados"])){
-            
-             $numerosInformados = $_POST["numerosDigitados"];
+            if (!empty($_POST["numerosDigitados"])){
 
-             $array_numeros = explode (",", $numerosInformados);
+                if($_POST["numerosDigitados"] >=0){
+                    $numerosInformados = $_POST["numerosDigitados"];
+
+                    $array_numeros = explode (",", $numerosInformados);
             
-             foreach($array_numeros as $numero){    
-               $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
-              }
-        
-            // mostra valores
-            echo "Os números pares são".'<pre>';
-                var_dump($par);
+                        foreach($array_numeros as $numero){    
+                        $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
+                        }
+                            // mostra valores
+                            echo "Os números pares são".'<pre>';
+                            var_dump($par);
             
-            echo "Os números ímpares são".'<pre>';
-                var_dump($impar);
-        }
-            
+                            echo "Os números ímpares são".'<pre>';
+                            var_dump($impar);
+                } else
+                echo "Os números informados devem ser positivos";
+                }            
         ?>
     </div>
 </body>
