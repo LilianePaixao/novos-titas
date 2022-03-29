@@ -31,19 +31,27 @@
                     
                     $array_numeros = explode (",", $numerosInformados);
                                                  
-                foreach($array_numeros as $numero){    
-                     $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
-                }
-                //Maior número
-                echo "O maior número informado é ". max($array_numeros).". ";
-                //media        
-                echo " A média será ". array_sum($array_numeros).". ";
-                // Porcentagem
-                echo "A porcentagem de números pares é ". count($par)*5 . " %" .".";    
-                } 
-                else
+                    foreach($array_numeros as $numero){    
+                        if ($numero % 2 == 0){
+                            $par[] = $numero;
+                        } else {
+                            $impar[] = $numero;
+                        }
+                        $sum += $numero;
+                    }
+                    //Menor número
+                    echo "O menor número informado é ". min($array_numeros).". ";
+                    //Maior número
+                    echo "O maior número informado é ". max($array_numeros).". ";
+                    //media        
+                    echo " A média será ". $sum/20 . ". ";
+                    // Porcentagem
+                    echo "A porcentagem de números pares é ". count($par)*5 . " %" .".";    
+                } else {
                     echo "Os números informados devem ser positivos.";
-            }            
+                 }
+            }     
+
         ?>
     </div>
 </body>
