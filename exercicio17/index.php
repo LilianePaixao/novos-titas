@@ -9,7 +9,10 @@
 </head>
 <body>
     <h1>Exercício 17</h1>
-    <p> Na primeira coluna armazene 20 números inteiros, na segunda coluna mostre quais desses números são pares e na terceira coluna quais são ímpares.</p>
+    <p> Criar o(s) campo(s) e pedir para o usuario digitar.</p>
+    <p> Fazer a logica de php que checa qual é o maior e menor.</p>
+    <p> Fazer a logica de php para calcular o % de numeros pares e media dos elementos.</p>
+    <p>Exibir msg na tela com os resultados</p>
     <div>
         <form action = "/exercicio17/index.php" method="POST">
             <fieldset>
@@ -32,11 +35,11 @@
                      $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
                 }
                 //Maior número
-                echo "O maior número é ". max($array_numeros);
+                echo "O maior número informado é ". max($array_numeros).". ";
                 //media        
-                echo "A média será". array_sum($array_numeros);
+                echo " A média será ". array_sum($array_numeros).". ";
                 // Porcentagem
-                echo "A porcentagem de números pares é ". $par * 5 . " %";    
+                echo "A porcentagem de números pares é ". count($par)*5 . " %" .".";    
                 } 
                 else
                     echo "Os números informados devem ser positivos";
