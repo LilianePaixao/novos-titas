@@ -17,7 +17,7 @@
         <form action = "/exercicio17/index.php" method="POST">
             <fieldset>
                 <label for="numero"> Informe 20 números separados com ",":</label>
-                <input type ="text" size= "100" maxlength ="50" name = "numerosDigitados">
+                <input type ="text" size= "100" maxlength ="80" name = "numerosDigitados">
                 <input type="submit" value="enviar" class="enviar">
             </fieldset>
         </form>
@@ -26,7 +26,7 @@
 
             if (!empty($_POST["numerosDigitados"])){
 
-                if($_POST["numerosDigitados"] >=0){
+                if($_POST["numerosDigitados"] > 0){
                     $numerosInformados = $_POST["numerosDigitados"];
                     
                     $array_numeros = explode (",", $numerosInformados);
@@ -42,7 +42,7 @@
                 echo "A porcentagem de números pares é ". count($par)*5 . " %" .".";    
                 } 
                 else
-                    echo "Os números informados devem ser positivos";
+                    echo "Os números informados devem ser positivos.";
             }            
         ?>
     </div>
