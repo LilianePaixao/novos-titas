@@ -12,7 +12,7 @@
     <p> Criar o(s) campo(s) e pedir para o usuario digitar.</p>
     <p> Fazer a logica de php que checa qual é o maior e menor.</p>
     <p> Fazer a logica de php para calcular o % de numeros pares e media dos elementos.</p>
-    <p>Exibir msg na tela com os resultados</p>
+    <p> Exibir msg na tela com os resultados</p>
     <div>
         <form action = "/exercicio17/index.php" method="POST">
             <fieldset>
@@ -39,19 +39,31 @@
                         }
                         $sum += $numero;
                     }
+                    $menorNumero = min($array_numeros);
+                    $maiorNumero = max($array_numeros);
+                    $media = $sum/20;
+                    $porcentagem = count($par)*5;
                     //Menor número
-                    echo "O menor número informado é ". min($array_numeros).". ";
+                    echo "O menor número informado é $menorNumero.";
                     //Maior número
-                    echo "O maior número informado é ". max($array_numeros).". ";
+                    echo "O maior número informado é $maiorNumero. ";
                     //media        
-                    echo " A média será ". $sum/20 . ". ";
+                    echo " A média será $media. ";
                     // Porcentagem
-                    echo "A porcentagem de números pares é ". count($par)*5 . " %" .".";    
+                    echo "A porcentagem de números pares é $porcentagem % .";    
                 } else {
                     echo "Os números informados devem ser positivos.";
-                 }
-            }     
-
+                }
+            } 
+               
+            //Trata os valores informados para evitar sql injection
+            $numerosDigitados = mysqli_escape_string($connect, $_POST['numerosDigitados']);
+        
+            $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda) VALUES ('$massa', '$perda','$tempoPerda')";
+            
+            test_execute_connection($connect, $sql);
+            massRadio();
+            
         ?>
     </div>
 </body>
