@@ -58,11 +58,8 @@
                
             //Trata os valores informados para evitar sql injection
             $numerosDigitados = mysqli_escape_string($connect, $_POST['numerosDigitados']);
-        
+            //Insert on DB
             $sql = "INSERT INTO Numeros (numerosDigitados, menorNumero, maiorNumero, media, porcentagem) VALUES ('$numerosDigitados', '$menorNumero','$maiorNumero', '$media','$porcentagem')";
-            
-            test_execute_connection($connect, $sql);
-            massRadio();
             
         ?>
     </div>
