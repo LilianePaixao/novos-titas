@@ -59,7 +59,7 @@
             //Trata os valores informados para evitar sql injection
             $numerosDigitados = mysqli_escape_string($connect, $_POST['numerosDigitados']);
         
-            $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda) VALUES ('$massa', '$perda','$tempoPerda')";
+            $sql = "INSERT INTO Numeros (numerosDigitados, menorNumero, maiorNumero, media, porcentagem) VALUES ('$numerosDigitados', '$menorNumero','$maiorNumero', '$media','$porcentagem')";
             
             test_execute_connection($connect, $sql);
             massRadio();
