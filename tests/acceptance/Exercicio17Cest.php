@@ -20,5 +20,7 @@ class Exercicios17Cest
         $I->fillField('numerosDigitados', '0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20');
         $I->click("enviar");
         $I->see('Os números informados devem ser positivos.' );
+        //BD query
+        $I->seeInDatabase('Numeros', ['name' => 'Davert', 'email' => 'davert@mail.com']);
     }
 }
