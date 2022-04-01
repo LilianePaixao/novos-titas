@@ -17,4 +17,19 @@ services:
       - 8282:80
     environment:
       - PMA_ARBITRARY=1
+  
+  workbench:
+    image: lscr.io/linuxserver/mysql-workbench
+    container_name: mysql-workbench
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao-Paulo
+    ports:
+      - 3000:3000
+    cap_add:
+      - IPC_LOCK
+    restart: unless-stopped
+  
+
 
