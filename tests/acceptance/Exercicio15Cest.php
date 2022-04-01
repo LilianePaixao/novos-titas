@@ -25,5 +25,7 @@ class Exercicios15Cest
         $I->fillField('tempoPerda, 60');
         $I->click("enviar");
         $I->see('Serão necessários 0 minuto(s), para que a massa do material seja menor que 0.10 gramas. ' );
+        #Database test
+        $I->seeInDatabase('Cientistas', ['id' => '95', 'massa' => '0.1', 'perda'=>'40', 'tempo_perda' => '60']);
     }
 }
