@@ -40,26 +40,28 @@ vendor/bin/codecept clean
 - https://codeception.com/
 
 ### To run Databases
-- Card 113
-Import database Estudantes.sql (where: /exercicio14/Estudantes.sql)
 
 - To run project
 /exercicio14
 docker-compose up -d
+Import database Estudantes.sql (where: /exercicio14/Estudantes.sql)
 
-- Cards NVT-107 and NVT-110
-Import database clientes.sql (where: /exercicio-banco-dados/clientes.sql)
-
-- To run project
+- To run project exercicio banco de dados
 /exercicio-banco-dados
 docker-compose up -d
+Import database clientes.sql (where:/exercicio15/clientes.sql)
 
-- Cards NVT-116
-Import database Cientistas.sql (where:/exercicio15/Cientistas.sql)
-
-- To run project
+- To run project exercicio 15
 /exercicio15
 docker-compose up -d
+Import database Cientistas.sql (where:/exercicio15/Cientistas.sql)
+
+- To run project exercicio 16
+/exercicio16
+docker-compose up -d
+Import database Numeros.sql (where:/exercicio16/Numeros.sql)
+
+
 
 
 
