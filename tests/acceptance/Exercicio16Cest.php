@@ -16,5 +16,7 @@ class Exercicios16Cest
         $I->fillField('numerosDigitados', '-1,-2,-3,-4,-5,-6,-7,-8,-9,10,11,12,13,14,15');
         $I->click("enviar");
         $I->see('Os números informados devem ser positivos' );
+        #Database test
+        $I->seeInDatabase('Numeros', ['id' => '40', 'numeros_digitados' => '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15', 'numeros_pares'=>'2,4,6,8,10,12,14', 'numeros_impares' => '1,3,5,7,9,11,13,15']);
     }
 }
