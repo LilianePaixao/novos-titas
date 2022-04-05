@@ -1,3 +1,10 @@
+<?php
+//conexão
+include_once 'db_connect.php';
+include_once 'test_execute_connection.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +21,7 @@
         <form action = "/exercicio16/index.php" method="POST">
             
             <label for="numero"> Informe 15 números separados com ",":</label>
-            <input type ="text" size= "100" maxlength ="50" name = "numerosDigitados" placeholder = "1,2,110,200,300,0...">
+            <input type ="text" size= "100" maxlength ="50" name = "numeros_digitados" placeholder = "1,2,110,200,300,0...">
 
             <input type="submit" value="enviar" class="enviar">
             
@@ -22,10 +29,10 @@
         
         <?php
 
-            if (!empty($_POST["numerosDigitados"])){
+            if (!empty($_POST["numeros_digitados"])){
 
-                if($_POST["numerosDigitados"] >=0){
-                    $numerosInformados = $_POST["numerosDigitados"];
+                if($_POST["numeros_digitados"] >= 0){
+                    $numerosInformados = $_POST["numeros_digitados"];
 
                     $array_numeros = explode (",", $numerosInformados);
             
@@ -33,15 +40,47 @@
                         $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
                     }
                     // mostra valores
-                    echo "Os números pares são".'<pre>';
-                    var_dump($par);
-    
-                    echo "Os números ímpares são".'<pre>';
-                    var_dump($impar);
+                    $arrayPar = implode (",", $par);
+
+                    $arrayImpar = implode (",", $impar);
+
+                    
+                    //Print datas
+                    $sql = "SELECT * FROM Numeros";
+                    $resultado = mysqli_query($connect, $sql);
+                
+                     while ($dados = mysqli_fetch_array($resultado)){
+                    ?>
+                    <table>
+                        <tr>
+                            <th> id </th>  
+                            <th> Números digitados </th>
+                            <th> Números pares </th> 
+                            <th> Números ímpares </th>  
+                        </tr>
+                        <tr>
+                            <td><?= $dados['id'];?> </td>
+                            <td><?= $dados['numeros_digitados'];?> </td>
+                            <td><?= $dados['numeros_pares'];?></td>
+                            <td><?= $dados['numeros_impares'];?></td>
+                        </tr>
+                    </table>  
+                    <?php
+                    }        
                 } 
                 else
                     echo "Os números informados devem ser positivos";
-            }            
+            }   
+            
+            //Trata os valores para evitar sql injection
+            $numerosDigitados = mysqli_escape_string($connect, $_POST['numeros_digitados']);
+            $numerosPares = mysqli_escape_string($connect, $par);
+            $numerosImpares= mysqli_escape_string($connect, $impar);
+
+            $sql = "INSERT INTO Numeros (numeros_digitados, numeros_pares, numeros_impares) VALUES ('$numerosDigitados', '$arrayPar','$arrayImpar')";         
+        
+            //teste de conexão
+            test_execute_connection($connect, $sql);
         ?>
     </div>
 </body>
