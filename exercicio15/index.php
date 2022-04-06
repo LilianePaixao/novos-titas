@@ -19,13 +19,14 @@ function massRadio(){
             $count++;
         }
         $totalTime = $tempoPerda*$count;
+        $tempoResultado = $totalTime/60;
 
-        echo "Serão necessários " .  $totalTime/60 . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
+        echo "Serão necessários " .  $tempoResultado . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
     } else {
         echo "Informe os dados que se pedem";
     }
     ?>
-    <a href='/2exercicio15/listagem_valores.php' class="btn"> Valores informados</a>
+    <a href='/exercicio15/listagem_valores.php' class="sumit"> Valores informados</a>
 <?php    
 }  
 ?>
@@ -70,8 +71,9 @@ function massRadio(){
         $massa = mysqli_escape_string($connect, $_POST['massa']);
         $perda = mysqli_escape_string($connect, $_POST['perda']);
         $tempoPerda= mysqli_escape_string($connect, $_POST['tempo_perda']);
+        $tempoResultado= mysqli_escape_string($connect,$tempoResultado);
        
-        $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda) VALUES ('$massa', '$perda','$tempoPerda')";
+        $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda, resultado_calculo) VALUES ('$massa', '$perda','$tempoPerda', '$tempoResultado')";
 
         
         test_execute_connection($connect, $sql);
