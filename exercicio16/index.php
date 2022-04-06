@@ -34,15 +34,15 @@ include_once 'test_execute_connection.php';
                 if($_POST["numeros_digitados"] >= 0){
                     $numerosInformados = $_POST["numeros_digitados"];
 
-                    $array_numeros = explode (",", $numerosInformados);
+                    $array_numeros = explode(",", $numerosInformados);
             
                     foreach($array_numeros as $numero){    
                         $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
                     }
                     // mostra valores
-                    $arrayPar = implode (",", $par);
+                    $arrayPar = implode(",", $par);
 
-                    $arrayImpar = implode (",", $impar);
+                    $arrayImpar = implode(",", $impar);
                     
                     
                     //Print datas
