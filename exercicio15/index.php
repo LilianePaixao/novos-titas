@@ -75,9 +75,6 @@ function massRadio(){
        
         $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda, resultado_calculo) VALUES ('$massa', '$perda','$tempoPerda', '$tempoResultado')";
 
-        var_dump($tempoResultado);
-
-        
         test_execute_connection($connect, $sql);
         massRadio();
         
