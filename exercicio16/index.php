@@ -43,7 +43,7 @@ include_once 'test_execute_connection.php';
                     $arrayPar = implode (",", $par);
 
                     $arrayImpar = implode (",", $impar);
-
+                    
                     
                     //Print datas
                     $sql = "SELECT * FROM Numeros";
@@ -74,8 +74,8 @@ include_once 'test_execute_connection.php';
             
             //Trata os valores para evitar sql injection
             $numerosDigitados = mysqli_escape_string($connect, $_POST['numeros_digitados']);
-            $numerosPares = mysqli_escape_string($connect, $par);
-            $numerosImpares= mysqli_escape_string($connect, $impar);
+            $numerosPares = mysqli_escape_string($connect, $arrayPar );
+            $numerosImpares= mysqli_escape_string($connect, $arrayImpar);
 
             $sql = "INSERT INTO Numeros (numeros_digitados, numeros_pares, numeros_impares) VALUES ('$numerosDigitados', '$arrayPar','$arrayImpar')";         
         
