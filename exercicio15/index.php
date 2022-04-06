@@ -23,7 +23,7 @@ function massRadio(){
 
         echo "Serão necessários " .  $tempoResultado . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
     } else {
-        echo "Informe os dados que se pedem";
+        echo "Informe os dados que se pedem <br>";
     }
     ?>
     <a href='/exercicio15/listagem_valores.php' class="sumit"> Valores informados</a>
@@ -74,6 +74,8 @@ function massRadio(){
         $tempoResultado= mysqli_escape_string($connect,$tempoResultado);
        
         $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda, resultado_calculo) VALUES ('$massa', '$perda','$tempoPerda', '$tempoResultado')";
+
+        var_dump($tempoResultado);
 
         
         test_execute_connection($connect, $sql);
