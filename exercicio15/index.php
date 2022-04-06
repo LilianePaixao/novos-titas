@@ -24,9 +24,10 @@ function massRadio(){
     } else {
         echo "Informe os dados que se pedem";
     }
-    
+    ?>
+    <a href='/2exercicio15/listagem_valores.php' class="btn"> Valores informados</a>
+<?php    
 }  
-
 ?>
 
 <!DOCTYPE html>
