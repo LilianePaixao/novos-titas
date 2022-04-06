@@ -4,6 +4,8 @@ include_once 'db_connect.php';
 include_once 'test_execute_connection.php';
 
 function massRadio(){
+    //Inicializando a variável para depois dar return
+    $resultadoMinuto = '';
     if (isset($_POST["massa"])){
     
         $tempoPerda = $_POST["tempo_perda"];
@@ -22,13 +24,15 @@ function massRadio(){
         $tempoResultado = $totalTime/60;
 
         echo "Serão necessários " .  $tempoResultado . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
+
+       $resultadoMinuto = $tempoResultado;
+        
     } else {
         echo "Informe os dados que se pedem <br>";
     }
-    ?>
-    <a href='/exercicio15/listagem_valores.php' class="sumit"> Valores informados</a>
-<?php    
-}  
+ 
+    return $resultadoMinuto;
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,19 +70,21 @@ function massRadio(){
 
         </form>
         <?php
+        $tempoResultado = massRadio();
         
+
         //Trata os valores informados para evitar sql injection
         $massa = mysqli_escape_string($connect, $_POST['massa']);
         $perda = mysqli_escape_string($connect, $_POST['perda']);
         $tempoPerda= mysqli_escape_string($connect, $_POST['tempo_perda']);
         $tempoResultado= mysqli_escape_string($connect,$tempoResultado);
        
-        $sql = "INSERT INTO Cientistas (massa, perda, tempo_perda, resultado_calculo) VALUES ('$massa', '$perda','$tempoPerda', '$tempoResultado')";
+        $sql = "INSERT INTO Cientistas (`massa`, `perda`, `tempo_perda`, `resultado_calculo`) VALUES ('$massa', '$perda','$tempoPerda', '$tempoResultado')";
 
         test_execute_connection($connect, $sql);
-        massRadio();
         
        ?>
+        <a href='/exercicio15/listagem_valores.php' class="sumit"> Valores informados</a>
     </div>
 </body>
 </html>
