@@ -3,6 +3,20 @@
 include_once 'db_connect.php';    
 include_once 'test_execute_connection.php';
 
+function calculoDeMassa($tempoPerda, $massa, $perda){
+    $count = 0;
+    for($massa; $massa>=0.1; $tempoPerda){
+        //incrementa à massa;
+        $resultado = $massa -($massa / 100 * $perda);
+        $massa = $resultado;
+        //conta mais um 
+        $count++;
+    }
+    $totalTime = $tempoPerda*$count;
+
+    return $totalTime/60;
+}
+
 function massRadio(){
     //Inicializando a variável para depois dar return
     $resultadoMinuto = '';
@@ -11,17 +25,8 @@ function massRadio(){
         $tempoPerda = $_POST["tempo_perda"];
         $massa = $_POST["massa"];
         $perda = $_POST["perda"];
-        $count = 0;
 
-        for($massa; $massa>=0.1; $tempoPerda){
-            //incrementa à massa;
-            $resultado = $massa -($massa / 100 * $perda);
-            $massa = $resultado;
-            //conta mais um 
-            $count++;
-        }
-        $totalTime = $tempoPerda*$count;
-        $tempoResultado = $totalTime/60;
+        $tempoResultado = calculoDeMassa($tempoPerda, $massa, $perda);
 
         echo "Serão necessários " .  $tempoResultado . " minuto(s), para que a massa do material seja menor que 0.10 gramas."; 
 
