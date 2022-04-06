@@ -13,6 +13,15 @@ include_once 'test_execute_connection.php';
     <title>Document</title>
 </head>
 <body>
+    <table>
+        <tr>
+            <th> id </th>  
+            <th> Massa </th>
+            <th> Perda % </th> 
+            <th> Tempo para perda </th>  
+            <th> Tempo em minutos </th>  
+        </tr>
+    
     <?php
         //Print datas
         $sql = "SELECT * FROM Cientistas";
@@ -20,24 +29,17 @@ include_once 'test_execute_connection.php';
      
         while ($dados = mysqli_fetch_array($resultado)){
     ?>
-            <table>
-                <tr>
-                    <th> id </th>  
-                    <th> Massa </th>
-                    <th> Perda % </th> 
-                    <th> Tempo para perda </th>  
-                    <th> Tempo em minutos </th>  
-                </tr>
-                <tr>
-                    <td><?= $dados['id'];?> </td>
-                    <td><?= $dados['massa'];?> </td>
-                    <td><?= $dados['perda'];?></td>
-                    <td><?= $dados['tempo_perda'];?></td>
-                    <td><?= $dados['resultado_calculo'];?></td>
-                </tr>
-            </table>  
-        <?php
-            }   
-        ?>
+            
+        <tr>
+            <td><?= $dados['id'];?> </td>
+            <td><?= $dados['massa'];?> </td>
+            <td><?= $dados['perda'];?></td>
+            <td><?= $dados['tempo_perda'];?></td>
+            <td><?= $dados['resultado_calculo'];?></td>
+        </tr>
+    <?php
+    }   
+    ?>
+    </table>  
 </body>
 </html>
