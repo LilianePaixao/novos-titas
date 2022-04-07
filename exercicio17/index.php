@@ -58,9 +58,14 @@
                
             //Trata os valores informados para evitar sql injection
             $numerosDigitados = mysqli_escape_string($connect, $_POST['numerosDigitados']);
+            $menorNumero = mysqli_escape_string($connect, $menorNumero);
+            $maiorNumero = mysqli_escape_string($connect, $maiorNumero);
+            $media = mysqli_escape_string($connect, $media);
+            $porcentagem = mysqli_escape_string($connect, $porcentagem);
+            
+            
             //Insert on DB
             $sql = "INSERT INTO Numeros (`numerosDigitados`, `menorNumero`, `maiorNumero`, `media`, `porcentagem`) VALUES ('$numerosDigitados', '$menorNumero','$maiorNumero', '$media','$porcentagem')";
-            
         ?>
     </div>
 </body>

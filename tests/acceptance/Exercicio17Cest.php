@@ -21,6 +21,6 @@ class Exercicios17Cest
         $I->click("enviar");
         $I->see('Os números informados devem ser positivos.' );
         //BD query
-        $I->seeInDatabase('Numeros', ['name' => 'Davert', 'email' => 'davert@mail.com']);
+        $I->seeInDatabase('Numeros', ['numerosDigitados' => '0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', 'menorNumero' => 'O menor número informado é 1.', 'maiorNumero'=>'O maior número informado é 20.', 'media'=> 'A média será 10.5.', 'porcentagem'=>'A porcentagem de números pares é 50 %.' ]);
     }
 }
