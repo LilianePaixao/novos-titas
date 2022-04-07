@@ -10,8 +10,8 @@
 <body>
     <h1>Exercício 17</h1>
     <p> Criar o(s) campo(s) e pedir para o usuario digitar.</p>
-    <p> Fazer a logica de php que checa qual é o maior e menor.</p>
-    <p> Fazer a logica de php para calcular o % de numeros pares e media dos elementos.</p>
+    <p> Fazer a lógica de php que checa qual é o maior e menor.</p>
+    <p> Fazer a lógica de php para calcular o % de numeros pares e media dos elementos.</p>
     <p> Exibir msg na tela com os resultados</p>
     <div>
         <form action = "/exercicio17/index.php" method="POST">
