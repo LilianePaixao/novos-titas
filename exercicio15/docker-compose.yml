@@ -6,7 +6,7 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: L1l1@n3
       MYSQL_DATABASE: Exercicio15
-      MYSQL_USER: acf
+      MYSQL_USER: root
       MYSQL_PASSWORD: password
     ports:
       - 5555:3306
