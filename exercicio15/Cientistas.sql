@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbMysql
--- Tempo de geração: 06/04/2022 às 18:24
+-- Tempo de geração: 08/04/2022 às 18:20
 -- Versão do servidor: 8.0.28
 -- Versão do PHP: 7.4.27
 
@@ -29,20 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Cientistas` (
   `id` int NOT NULL,
-  `massa` varchar(255) NOT NULL,
-  `perda` varchar(255) NOT NULL,
-  `tempo_perda` varchar(255) NOT NULL,
-  `resultado_calculo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `massa` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `perda` int NOT NULL,
+  `tempo_perda` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `resultado_calculo` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Despejando dados para a tabela `Cientistas`
 --
 
 INSERT INTO `Cientistas` (`id`, `massa`, `perda`, `tempo_perda`, `resultado_calculo`) VALUES
-(12, '', '', '', ''),
-(13, '0.1', '40', '60', ''),
-(14, '0.1', '40', '60', '');
+(1, '0.1', 40, '60', '1');
 
 --
 -- Índices para tabelas despejadas
@@ -62,7 +60,7 @@ ALTER TABLE `Cientistas`
 -- AUTO_INCREMENT de tabela `Cientistas`
 --
 ALTER TABLE `Cientistas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
