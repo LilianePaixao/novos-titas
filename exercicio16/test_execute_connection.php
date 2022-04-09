@@ -1,6 +1,6 @@
 <?php
 
-function test_execute_connection($connect, $sql)
+function test_execute_connection($connect, $sql = 'show databases;')
 {
     try {
         if (!$mysqli = mysqli_query($connect, $sql)) {
