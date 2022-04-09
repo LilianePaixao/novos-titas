@@ -14,6 +14,7 @@ include_once 'test_execute_connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio16</title>
 </head>
+
 <body>
     <h1>Exercício 16</h1>
     <p> Na primeira coluna armazene 15 números inteiros, na segunda coluna mostre quais desses números são pares e na terceira coluna quais são ímpares.</p>
@@ -28,6 +29,8 @@ include_once 'test_execute_connection.php';
         </form>
         
         <?php
+        //teste de conexão
+        test_execute_connection($connect);
 
             if (!empty($_POST["numeros_digitados"])){
 
@@ -44,29 +47,8 @@ include_once 'test_execute_connection.php';
 
                     $arrayImpar = implode(",", $impar);
                     
+
                     
-                    //Print datas
-                    $sql = "SELECT * FROM Numeros";
-                    $resultado = mysqli_query($connect, $sql);
-                
-                     while ($dados = mysqli_fetch_array($resultado)){
-                    ?>
-                    <table>
-                        <tr>
-                            <th> id </th>  
-                            <th> Números digitados </th>
-                            <th> Números pares </th> 
-                            <th> Números ímpares </th>  
-                        </tr>
-                        <tr>
-                            <td><?= $dados['id'];?> </td>
-                            <td><?= $dados['numeros_digitados'];?> </td>
-                            <td><?= $dados['numeros_pares'];?></td>
-                            <td><?= $dados['numeros_impares'];?></td>
-                        </tr>
-                    </table>  
-                    <?php
-                    }        
                 } 
                 else
                     echo "Os números informados devem ser positivos";
@@ -77,10 +59,34 @@ include_once 'test_execute_connection.php';
             $numerosPares = mysqli_escape_string($connect, $arrayPar );
             $numerosImpares= mysqli_escape_string($connect, $arrayImpar);
 
-            $sql = "INSERT INTO Numeros (numeros_digitados, numeros_pares, numeros_impares) VALUES ('$numerosDigitados', '$arrayPar','$arrayImpar')";         
-        
-            //teste de conexão
-            test_execute_connection($connect, $sql);
+            $sql = "INSERT INTO Numeros (`numeros_digitados`, `numeros_pares`, `numeros_impares`) VALUES ('$numerosDigitados', '$arrayPar','$arrayImpar')";  
+            ?>
+            
+                     <table>
+                        <tr>
+                            <th> id </th>  
+                            <th> Números digitados </th>
+                            <th> Números pares </th> 
+                            <th> Números ímpares </th>  
+                        </tr>
+                    <?php
+                    //Print datas
+                    $sql = "SELECT * FROM Numeros";
+                    $resultado = mysqli_query($connect, $sql);
+                    
+                     while ($dados = mysqli_fetch_array($resultado)){
+                    ?>
+                        <tr>
+                            <td><?= $dados['id'];?> </td>
+                            <td><?= $dados['numeros_digitados'];?> </td>
+                            <td><?= $dados['numeros_pares'];?></td>
+                            <td><?= $dados['numeros_impares'];?></td>
+                        </tr>
+                    </table>  
+                    <?php
+                    }        
+                    
+                    
         ?>
     </div>
 </body>
