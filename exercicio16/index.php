@@ -2,7 +2,6 @@
 //conexão
 include_once 'db_connect.php';
 include_once 'test_execute_connection.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +29,7 @@ include_once 'test_execute_connection.php';
         
         <?php
         //teste de conexão
-        test_execute_connection($connect);
+        test_execute_connection($connect, $sql);
 
             if (!empty($_POST["numeros_digitados"])){
 
@@ -40,53 +39,54 @@ include_once 'test_execute_connection.php';
                     $array_numeros = explode(",", $numerosInformados);
             
                     foreach($array_numeros as $numero){    
-                        $numero % 2 ==0 ? $par[] = $numero : $impar[] = $numero;
-                    }
+                        $numero % 2 == 0 ? $par[] = $numero : $impar[] = $numero;
+                    } 
                     // mostra valores
-                    $arrayPar = implode(",", $par);
-
-                    $arrayImpar = implode(",", $impar);
-                    
-
-                    
-                } 
+                    $stringPar = implode(",", $par);
+                    $stringImpar = implode(",", $impar);
+                    $stringNumeros = implode(",", $array_numeros);
+                   }
                 else
                     echo "Os números informados devem ser positivos";
             }   
             
             //Trata os valores para evitar sql injection
-            $numerosDigitados = mysqli_escape_string($connect, $_POST['numeros_digitados']);
-            $numerosPares = mysqli_escape_string($connect, $arrayPar );
-            $numerosImpares= mysqli_escape_string($connect, $arrayImpar);
+            $numerosDigitados = mysqli_escape_string($connect, $stringNumeros);
+            $numerosPares = mysqli_escape_string($connect, $stringPar );
+            $numerosImpares= mysqli_escape_string($connect, $stringImpar);
 
-            $sql = "INSERT INTO Numeros (`numeros_digitados`, `numeros_pares`, `numeros_impares`) VALUES ('$numerosDigitados', '$arrayPar','$arrayImpar')";  
-            ?>
-            
-                     <table>
-                        <tr>
-                            <th> id </th>  
-                            <th> Números digitados </th>
-                            <th> Números pares </th> 
-                            <th> Números ímpares </th>  
-                        </tr>
-                    <?php
-                    //Print datas
-                    $sql = "SELECT * FROM Numeros";
-                    $resultado = mysqli_query($connect, $sql);
-                    
-                     while ($dados = mysqli_fetch_array($resultado)){
-                    ?>
-                        <tr>
-                            <td><?= $dados['id'];?> </td>
-                            <td><?= $dados['numeros_digitados'];?> </td>
-                            <td><?= $dados['numeros_pares'];?></td>
-                            <td><?= $dados['numeros_impares'];?></td>
-                        </tr>
-                    </table>  
-                    <?php
-                    }        
-                    
-                    
+            $sql = "INSERT INTO Numeros (`numeros_digitados`, `numeros_pares`, `numeros_impares`) VALUES ('$numerosDigitados', '$stringPar','$stringImpar')";  
+
+            var_dump($stringNumeros);
+            var_dump($stringPar);
+            var_dump($stringImpar);
+
+            //Print datas
+            $sql = "SELECT * FROM Numeros";
+            $resultado = mysqli_query($connect, $sql);
+
+        ?>
+
+            <table>
+            <tr>
+                <th> id </th>  
+                <th> Números digitados </th>
+                <th> Números pares </th> 
+                <th> Números ímpares </th>  
+            </tr>
+        <?php
+        
+            while ($dados = mysqli_fetch_array($resultado)){
+        ?>
+            <tr>
+                <td><?= $dados['id'];?> </td>
+                <td><?= $dados['numeros_digitados'];?> </td>
+                <td><?= $dados['numeros_pares'];?></td>
+                <td><?= $dados['numeros_impares'];?></td>
+            </tr>
+            </table>  
+        <?php
+        }        
         ?>
     </div>
 </body>
