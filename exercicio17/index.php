@@ -23,16 +23,16 @@ include_once 'execute_connection.php';
         <form action = "/exercicio17/index.php" method="POST">
             <fieldset>
                 <label for="numero"> Informe 20 números separados com ",":</label>
-                <input type ="text" size= "100" maxlength ="80" name = "numerosDigitados">
+                <input type ="text" size= "100" maxlength ="80" name = "numeros_digitados">
                 <input type="submit" value="enviar" class="enviar">
             </fieldset>
         </form>
         
         <?php
 
-            if (!empty($_POST["numeros_digitados"]){ 
+            if (!empty($_POST["numeros_digitados"])){ 
                 
-                if ($_POST["numeros_digitados"] >= 0)){
+                if ($_POST["numeros_digitados"] >= 0){
                 
                     $numerosInformados = $_POST["numeros_digitados"];
                         
@@ -51,15 +51,6 @@ include_once 'execute_connection.php';
                     $media = $sum/20;
                     $porcentagem = count($par)*5;
                     
-                    //Menor número
-                    echo "O menor número informado é $menorNumero.";
-                    //Maior número
-                    echo "O maior número informado é $maiorNumero. ";
-                    //media        
-                    echo " A média será $media. ";
-                    // Porcentagem
-                    echo "A porcentagem de números pares é $porcentagem % .";
-                                    
                     //Trata os valores informados para evitar sql injection
                     $numerosDigitados = mysqli_escape_string($connect, $_POST['numeros_digitados']);
                     $menorNumero = mysqli_escape_string($connect, $menorNumero);
@@ -75,7 +66,7 @@ include_once 'execute_connection.php';
             } else {
                 echo "Os números informados devem ser positivos.";
             }
-        }
+        }    
         
             //Print datas
             $sql = "SELECT * FROM exercicio17";
@@ -89,11 +80,12 @@ include_once 'execute_connection.php';
                     <th> Os Números digitados </th>
                     <th> O Menor número informado </th> 
                     <th> O Maior número informado </th> 
-                    <th> O Maior número informado </th> 
+                    <th> A média dos números informados </th> 
                     <th> A porcentagem de números pares </th>  
                 </tr>
                 <tr>
                     <td><?= $dados['id'];?> </td>
+                    <td><?= $dados['numeros_digitados'];?> </td>
                     <td><?= $dados['menorNumero'];?> </td>
                     <td><?= $dados['maiorNumero'];?></td>
                     <td><?= $dados['media'];?></td>
