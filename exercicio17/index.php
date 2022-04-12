@@ -30,67 +30,74 @@ include_once 'execute_connection.php';
         
         <?php
 
-            if (!empty($_POST["numeros_digitados"] && $_POST["numeros_digitados"] > 0)){
+            if (!empty($_POST["numeros_digitados"]){ 
                 
-                $numerosInformados = $_POST["numeros_digitados"];
-                    
-                $array_numeros = explode (",", $numerosInformados);
-                                                
-                foreach($array_numeros as $numero){    
-                    if ($numero % 2 == 0){
-                        $par[] = $numero;
-                    } else {
-                        $impar[] = $numero;
+                if ($_POST["numeros_digitados"] >= 0)){
+                
+                    $numerosInformados = $_POST["numeros_digitados"];
+                        
+                    $array_numeros = explode (",", $numerosInformados);
+                                                    
+                    foreach($array_numeros as $numero){    
+                        if ($numero % 2 == 0){
+                            $par[] = $numero;
+                        } else {
+                            $impar[] = $numero;
+                        }
+                        $sum += $numero;
                     }
-                    $sum += $numero;
-                }
-                $menorNumero = min($array_numeros);
-                $maiorNumero = max($array_numeros);
-                $media = $sum/20;
-                $porcentagem = count($par)*5;
-                
-                //Menor número
-                echo "O menor número informado é $menorNumero.";
-                //Maior número
-                echo "O maior número informado é $maiorNumero. ";
-                //media        
-                echo " A média será $media. ";
-                // Porcentagem
-                echo "A porcentagem de números pares é $porcentagem % .";
-                
-                //Trata os valores informados para evitar sql injection
-                $numerosDigitados = mysqli_escape_string($connect, $_POST['numeros_digitados']);
-                $menorNumero = mysqli_escape_string($connect, $menorNumero);
-                $maiorNumero = mysqli_escape_string($connect, $maiorNumero);
-                $media = mysqli_escape_string($connect, $media);
-                $porcentagem = mysqli_escape_string($connect, $porcentagem);
-                
-                //Insert on DB
-                $sql = "INSERT INTO exercicio17 (`numeros_digitados`, `menorNumero`, `maiorNumero`, `media`, `porcentagem`) VALUES ('$numerosDigitados', '$menorNumero','$maiorNumero', '$media','$porcentagem')";
+                    $menorNumero = min($array_numeros);
+                    $maiorNumero = max($array_numeros);
+                    $media = $sum/20;
+                    $porcentagem = count($par)*5;
+                    
+                    //Menor número
+                    echo "O menor número informado é $menorNumero.";
+                    //Maior número
+                    echo "O maior número informado é $maiorNumero. ";
+                    //media        
+                    echo " A média será $media. ";
+                    // Porcentagem
+                    echo "A porcentagem de números pares é $porcentagem % .";
+                                    
+                    //Trata os valores informados para evitar sql injection
+                    $numerosDigitados = mysqli_escape_string($connect, $_POST['numeros_digitados']);
+                    $menorNumero = mysqli_escape_string($connect, $menorNumero);
+                    $maiorNumero = mysqli_escape_string($connect, $maiorNumero);
+                    $media = mysqli_escape_string($connect, $media);
+                    $porcentagem = mysqli_escape_string($connect, $porcentagem);
+                    
+                    //Insert on DB
+                    $sql = "INSERT INTO exercicio17 (`numeros_digitados`, `menorNumero`, `maiorNumero`, `media`, `porcentagem`) VALUES ('$numerosDigitados', '$menorNumero','$maiorNumero', '$media','$porcentagem')";
 
-                execute_connection($connect, $sql);
+                    execute_connection($connect, $sql);
 
             } else {
                 echo "Os números informados devem ser positivos.";
             }
+        }
         
             //Print datas
-            $sql = "SELECT * FROM exercicio16";
+            $sql = "SELECT * FROM exercicio17";
             $resultado = execute_connection($connect, $sql);
+
             while ($dados = mysqli_fetch_array($resultado)){
        ?>
                 <table>
                 <tr>
                     <th> id </th>  
-                    <th> Números digitados </th>
-                    <th> Números pares </th> 
-                    <th> Números ímpares </th>  
+                    <th> Os Números digitados </th>
+                    <th> O Menor número informado </th> 
+                    <th> O Maior número informado </th> 
+                    <th> O Maior número informado </th> 
+                    <th> A porcentagem de números pares </th>  
                 </tr>
                 <tr>
                     <td><?= $dados['id'];?> </td>
-                    <td><?= $dados['numeros_digitados'];?> </td>
-                    <td><?= $dados['numeros_pares'];?></td>
-                    <td><?= $dados['numeros_impares'];?></td>
+                    <td><?= $dados['menorNumero'];?> </td>
+                    <td><?= $dados['maiorNumero'];?></td>
+                    <td><?= $dados['media'];?></td>
+                    <td><?= $dados['porcentagem'];?></td>
                 </tr>
                 </table>  
         <?php     
