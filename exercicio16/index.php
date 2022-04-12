@@ -1,7 +1,7 @@
 <?php
 //conexão
 include_once 'db_connect.php';
-include_once 'test_execute_connection.php';
+include_once 'execute_connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,45 +28,47 @@ include_once 'test_execute_connection.php';
         </form>
         
         <?php
-        //teste de conexão
-        test_execute_connection($connect, $sql);
+        
+            if (isset($_POST["numeros_digitados"])&& ($_POST["numeros_digitados"] >= 0)) {
 
-            if (!empty($_POST["numeros_digitados"])){
+                $numerosInformados = $_POST["numeros_digitados"];
 
-                if($_POST["numeros_digitados"] >= 0){
-                    $numerosInformados = $_POST["numeros_digitados"];
+                $array_numeros = explode(",", $numerosInformados);
+        
+                foreach($array_numeros as $numero){    
+                    $numero % 2 == 0 ? $par[] = $numero : $impar[] = $numero;
+                } 
 
-                    $array_numeros = explode(",", $numerosInformados);
-            
-                    foreach($array_numeros as $numero){    
-                        $numero % 2 == 0 ? $par[] = $numero : $impar[] = $numero;
-                    } 
-                    // mostra valores
-                    $stringPar = implode(",", $par);
-                    $stringImpar = implode(",", $impar);
-                    $stringNumeros = implode(",", $array_numeros);
-                   }
-                else
+                // Change array to string
+                $stringPar = implode(",", $par);
+                $stringImpar = implode(",", $impar);
+                $stringNumeros = implode(",", $array_numeros);
+
+                //Treatment to avoid sql injection
+                $numerosDigitados = mysqli_escape_string($connect, $stringNumeros);
+                $numerosPares = mysqli_escape_string($connect, $stringPar );
+                $numerosImpares= mysqli_escape_string($connect, $stringImpar);
+
+                $sql = "INSERT INTO exercicio16 (`numeros_digitados`, `numeros_pares`, `numeros_impares`) VALUES ('$numerosDigitados', '$numerosPares','$numerosImpares')";  
+
+                execute_connection($connect, $sql);
+                }
+                else {
                     echo "Os números informados devem ser positivos";
             }   
             
-            //Trata os valores para evitar sql injection
-            $numerosDigitados = mysqli_escape_string($connect, $stringNumeros);
-            $numerosPares = mysqli_escape_string($connect, $stringPar );
-            $numerosImpares= mysqli_escape_string($connect, $stringImpar);
-
-            $sql = "INSERT INTO Numeros (`numeros_digitados`, `numeros_pares`, `numeros_impares`) VALUES ('$numerosDigitados', '$stringPar','$stringImpar')";  
-
-            var_dump($stringNumeros);
-            var_dump($stringPar);
-            var_dump($stringImpar);
+            
 
             //Print datas
-            $sql = "SELECT * FROM Numeros";
-            $resultado = mysqli_query($connect, $sql);
+            $sql = "SELECT * FROM exercicio16";
+            $resultado = execute_connection($connect, $sql);
 
         ?>
 
+<?php
+        
+        while ($dados = mysqli_fetch_array($resultado)){
+            ?>
             <table>
             <tr>
                 <th> id </th>  
@@ -74,10 +76,6 @@ include_once 'test_execute_connection.php';
                 <th> Números pares </th> 
                 <th> Números ímpares </th>  
             </tr>
-        <?php
-        
-            while ($dados = mysqli_fetch_array($resultado)){
-        ?>
             <tr>
                 <td><?= $dados['id'];?> </td>
                 <td><?= $dados['numeros_digitados'];?> </td>
