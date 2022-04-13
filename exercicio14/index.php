@@ -1,6 +1,7 @@
 <?php
 //Conexão
-include_once 'db_connect.php';      
+include_once 'db_connect.php';   
+include_once 'execute_connection.php'   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -66,19 +67,7 @@ include_once 'db_connect.php';
             //insere dados no banco de dados
             $sql = "INSERT INTO Estudantes (higth1, growth1, higth2, growth2) VALUES ('$estudanteMaior', '$cresceMaior','$estudanteMenor', '$cresceMenor')";
 
-            try {
-                if ($mysqli = mysqli_query($connect, $sql)) {
-                   // header('Location:index.php?sucesso');
-                  exit;
-                } else {
-                 //   header('Location:index.php?erro');
-                 printf("Can't connect to localhost. Error: %s\n", mysqli_connect_error());
-                 var_dump($connect);
-              }
-      
-              } catch (Exception $e) {
-                  echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-              } 
+            execute_connection($connect, $sql);
        ?>
     </div>
 </body>
