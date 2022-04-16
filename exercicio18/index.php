@@ -25,18 +25,21 @@ include_once './includes/header.php';
             $arrayNumbers2 = explode(",", $_POST["numbers2"]);
     
             $result = array_diff($arrayNumbers1, $arrayNumbers2);
+            $resultOther = array_diff($arrayNumbers2, $arrayNumbers1);
 
             // Change array to string
             $stringNumbers1 = implode(",", $arrayNumbers1);
             $stringNumbers2 = implode(",", $arrayNumbers2);
             $stringresult = implode(",", $result);
+            $stringresultOther = implode(",", $resultOther);
             
             //Treatment to avoid sql injection
             $stringNumbers1 = mysqli_escape_string($connect, $stringNumbers1);
             $stringNumbers2 = mysqli_escape_string($connect, $stringNumbers2 );
-            $stringresult= mysqli_escape_string($connect, $stringresult);
+            $stringresult = mysqli_escape_string($connect, $stringresult);
+            $stringresultOther = mysqli_escape_string($connect, $stringresultOther);
             
-            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringresult')";  
+            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringresult', '$stringresultOther' )";  
             
             execute_connection($connect, $sql);
             
@@ -50,7 +53,7 @@ include_once './includes/header.php';
                     <th> id </th>  
                     <th> Primeira lista de números informados </th>
                     <th> Segunda lista de números informados </th> 
-                    <th> Números que existem somente na primeira lista e não na segunda</th>  
+                    <th> Números incomuns</th>  
                 </tr>
             <?php
                 
