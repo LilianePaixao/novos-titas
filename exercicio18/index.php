@@ -30,16 +30,16 @@ include_once './includes/header.php';
             // Change array to string
             $stringNumbers1 = implode(",", $arrayNumbers1);
             $stringNumbers2 = implode(",", $arrayNumbers2);
-            $stringresult = implode(",", $result);
-            $stringresultOther = implode(",", $resultOther);
+            $stringResult = implode(",", $result);
+            $stringResultOther = implode(",", $resultOther);
             
             //Treatment to avoid sql injection
             $stringNumbers1 = mysqli_escape_string($connect, $stringNumbers1);
             $stringNumbers2 = mysqli_escape_string($connect, $stringNumbers2 );
-            $stringresult = mysqli_escape_string($connect, $stringresult);
-            $stringresultOther = mysqli_escape_string($connect, $stringresultOther);
+            $stringResult = mysqli_escape_string($connect, $stringresult);
+            $stringResultOther = mysqli_escape_string($connect, $stringresultOther);
             
-            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringresult', '$stringresultOther' )";  
+            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringResult', '$stringResultOther' )";  
             
             execute_connection($connect, $sql);
             
