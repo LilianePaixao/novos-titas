@@ -42,5 +42,6 @@ class Exercicios14Cest
         $I->fillField('growth2','7');
         $I->click("enviar");
         $I->seeInDatabase('Estudantes', ['higth1' => '170', 'growth1'=>'5', 'higth2' => '110', 'growth2'=> '7']);
+        $I->see('Serão necessários 31 anos, para que o segundo estudante seja maior que o primeiro estudante informado.' );
     }
 }
