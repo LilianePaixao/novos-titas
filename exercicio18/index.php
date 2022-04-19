@@ -39,7 +39,7 @@ include_once './includes/header.php';
             $stringResult = mysqli_escape_string($connect, $stringresult);
             $stringResultOther = mysqli_escape_string($connect, $stringresultOther);
             
-            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringResult', '$stringResultOther' )";  
+            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringResult . $stringResultOther')";  
             
             execute_connection($connect, $sql);
             
