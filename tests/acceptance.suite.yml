@@ -11,7 +11,7 @@ modules:
             url: http://localhost:8585
         - \Helper\Acceptance
         - Db:
-            dsn: 'mysql:host=localhost:5555;dbname=exercicio14'
+            dsn: 'mysql:host=localhost:5555;dbname=Exercicio15'
             user: 'root'
             password: 'L1l1@n3' 
 step_decorators: ~       
