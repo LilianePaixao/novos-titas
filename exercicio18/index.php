@@ -26,20 +26,22 @@ include_once './includes/header.php';
     
             $result = array_diff($arrayNumbers1, $arrayNumbers2);
             $resultOther = array_diff($arrayNumbers2, $arrayNumbers1);
-
+            
             // Change array to string
             $stringNumbers1 = implode(",", $arrayNumbers1);
             $stringNumbers2 = implode(",", $arrayNumbers2);
             $stringResult = implode(",", $result);
             $stringResultOther = implode(",", $resultOther);
-            
+
             //Treatment to avoid sql injection
             $stringNumbers1 = mysqli_escape_string($connect, $stringNumbers1);
             $stringNumbers2 = mysqli_escape_string($connect, $stringNumbers2 );
-            $stringResult = mysqli_escape_string($connect, $stringresult);
-            $stringResultOther = mysqli_escape_string($connect, $stringresultOther);
-            
-            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringResult . $stringResultOther')";  
+            $stringResult = mysqli_escape_string($connect, $stringResult);
+            $stringResultOther = mysqli_escape_string($connect, $stringResultOther);
+
+            $stringTogether = $stringResult .','. $stringResultOther;
+                       
+            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2',' $stringTogether')";  
             
             execute_connection($connect, $sql);
             
@@ -61,15 +63,18 @@ include_once './includes/header.php';
             ?>
                 <tr>
                     <td><?= $dados['id'];?> </td>
-                    <td><?= $dados['numbers1'];?> </td>
+                    <td><?= $dados['numbers1'];?></td>
                     <td><?= $dados['numbers2'];?></td>
                     <td><?= $dados['result'];?></td>
                 </tr>
-                </table>  
-            <?php
-                }    
-
+                <?php
+                }
+                ?>    
+             
+            </table>     
+        <?php    
         }   
 //footer
 include_once './includes/footer.php';
 ?>
+ 
