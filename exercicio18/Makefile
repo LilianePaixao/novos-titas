@@ -15,6 +15,6 @@ import:
 	docker exec -i exercicio18_dbMysql_1 sh -c "exec mysql -uroot -pL1l1@n3" < exercicios18.sql
 	cd /home/liliane/projetos/novos-titas && php -S localhost:8585
 test: 
-	cd ../ && php vendor/bin/codecept run acceptance Exercicio18Cest
+	cd /home/liliane/projetos/novos-titas && php vendor/bin/codecept run acceptance Exercicio18Cest
 down:
 	docker-compose down
