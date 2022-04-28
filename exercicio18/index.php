@@ -24,8 +24,8 @@ include_once './includes/header.php';
             $arrayNumbers1 = explode(",", $_POST["numbers1"]);
             $arrayNumbers2 = explode(",", $_POST["numbers2"]);
     
-            $result = array_diff($arrayNumbers1, $arrayNumbers2);
-            $resultOther = array_diff($arrayNumbers2, $arrayNumbers1);
+            $result = array_diff($arrayNumbers1,$arrayNumbers2);
+            $resultOther = array_diff($arrayNumbers2,$arrayNumbers1);
             
             // Change array to string
             $stringNumbers1 = implode(",", $arrayNumbers1);
@@ -39,9 +39,9 @@ include_once './includes/header.php';
             $stringResult = mysqli_escape_string($connect, $stringResult);
             $stringResultOther = mysqli_escape_string($connect, $stringResultOther);
 
-            $stringTogether = $stringResult .','. $stringResultOther;
+            $stringTogether = $stringResult.'   '.$stringResultOther;
                        
-            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2',' $stringTogether')";  
+            $sql = "INSERT INTO exercicio18 (`numbers1`, `numbers2`, `result`) VALUES ('$stringNumbers1', '$stringNumbers2','$stringTogether')";  
             
             execute_connection($connect, $sql);
             
