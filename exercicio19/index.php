@@ -24,7 +24,7 @@ include_once './includes/header.php';
     
             $split = 5;
 
-            $arrayMulti = array_chunk ($array, $split);
+            $arrayMulti = array_chunk($array, $split);
 
             echo "Os números que compõem a diagonal são <br/>";
             
